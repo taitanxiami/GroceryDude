@@ -104,7 +104,6 @@
                 [_coreDataHelper.context deleteObject:item];
             }
         }
-        
         //删除的对象模型不会立即删除，需要调用saveContext
         [_coreDataHelper saveContext];
     }
