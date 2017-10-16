@@ -82,14 +82,16 @@
     
     
     //获取数据
-    NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Item"];
+//    NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Item"];
+//     fetch request templates 获取请求模板
+    NSFetchRequest *req = [[[_coreDataHelper model] fetchRequestTemplateForName:@"Test"] copy];
     //对搜索结果排序
     NSSortDescriptor *sortDes = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
     req.sortDescriptors = @[sortDes];
     
     //对搜索结果筛选
-    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"name != %@",@"Eggs"];
-    req.predicate = filterPredicate;
+//    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"name != %@",@"Eggs"];
+//    req.predicate = filterPredicate;
     NSError *error = nil;
     NSArray *items =  [_coreDataHelper.context executeFetchRequest:req error:&error];
     if (error) {
