@@ -84,8 +84,17 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
     NSError *error = nil;
     
 #warning 禁用SQLite日志模式
-    NSDictionary *options = @{NSSQLitePragmasOption: @{@"journal_mode":@"DELETE"}};
-    _store  = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[self storeURL] options:options error:&error];
+    NSDictionary *options = @{
+                              NSSQLitePragmasOption: @{@"journal_mode":@"DELETE"}
+                              ,NSMigratePersistentStoresAutomaticallyOption:@YES
+                              ,NSInferMappingModelAutomaticallyOption:@YES
+                              };
+    
+    _store  = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                         configuration:nil
+                                                   URL:[self storeURL]
+                                               options:options
+                                                 error:&error];
     if (!_store) {
         NSLog(@"Failed to add store Error: %@",error);
     }else {

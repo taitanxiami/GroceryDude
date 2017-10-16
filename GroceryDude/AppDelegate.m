@@ -71,42 +71,42 @@
         NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
-//    NSArray *newItems = @[@"Apples",@"Milk",@"Bread",@"Cheese",@"Sausages",@"Butter",@"Orange Juice",@"Cereal",@"Coffee",@"Eggs",@"Tomatoes",@"Fish"];
-//
-//    for (NSString *itemName in newItems) {
-        //插入数据
-//        Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
-//        item.name = itemName;
-//        NSLog(@"Insert New Managerd Object for '%@'",item.name);
-//    }
+    NSArray *newItems = @[@"Apples",@"Milk",@"Bread",@"Cheese",@"Sausages",@"Butter",@"Orange Juice",@"Cereal",@"Coffee",@"Eggs",@"Tomatoes",@"Fish"];
+
+    for (NSString *itemName in newItems) {
+//        插入数据
+        Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
+        item.name = itemName;
+        NSLog(@"Insert New Managerd Object for '%@'",item.name);
+    }
     
     
     //获取数据
 //    NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Item"];
 //     fetch request templates 获取请求模板
-    NSFetchRequest *req = [[[_coreDataHelper model] fetchRequestTemplateForName:@"Test"] copy];
+//    NSFetchRequest *req = [[[_coreDataHelper model] fetchRequestTemplateForName:@"Test"] copy];
     //对搜索结果排序
-    NSSortDescriptor *sortDes = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    req.sortDescriptors = @[sortDes];
+//    NSSortDescriptor *sortDes = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+//    req.sortDescriptors = @[sortDes];
     
     //对搜索结果筛选
 //    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"name != %@",@"Eggs"];
 //    req.predicate = filterPredicate;
-    NSError *error = nil;
-    NSArray *items =  [_coreDataHelper.context executeFetchRequest:req error:&error];
-    if (error) {
-        NSLog(@"Failed to fecth items: %@", error);
-    }else {
-        for (Item *item in items) {
-            NSLog(@"Item name: %@",item.name);
-            
-            if([item.name isEqualToString:@"Cereal"]) {
-                [_coreDataHelper.context deleteObject:item];
-            }
-        }
-        //删除的对象模型不会立即删除，需要调用saveContext
-        [_coreDataHelper saveContext];
-    }
+//    NSError *error = nil;
+//    NSArray *items =  [_coreDataHelper.context executeFetchRequest:req error:&error];
+//    if (error) {
+//        NSLog(@"Failed to fecth items: %@", error);
+//    }else {
+//        for (Item *item in items) {
+//            NSLog(@"Item name: %@",item.name);
+//
+//            if([item.name isEqualToString:@"Cereal"]) {
+//                [_coreDataHelper.context deleteObject:item];
+//            }
+//        }
+//        //删除的对象模型不会立即删除，需要调用saveContext
+//        [_coreDataHelper saveContext];
+//    }
     
 
 }

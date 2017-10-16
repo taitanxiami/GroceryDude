@@ -39,6 +39,7 @@
 		843E25971F93A16C00FF554F /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
 		843E25981F93A16C00FF554F /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
 		843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B45D96DE1F9473BC00E12922 /* GroceryDude 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,9 +372,10 @@
 		843AD91A1F9387D900C787A1 /* GroceryDude.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B45D96DE1F9473BC00E12922 /* GroceryDude 2.xcdatamodel */,
 				843AD91B1F9387D900C787A1 /* GroceryDude.xcdatamodel */,
 			);
-			currentVersion = 843AD91B1F9387D900C787A1 /* GroceryDude.xcdatamodel */;
+			currentVersion = B45D96DE1F9473BC00E12922 /* GroceryDude 2.xcdatamodel */;
 			path = GroceryDude.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
