@@ -78,10 +78,14 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
     }
     
     if (_store) {
+        NSLog(@"存储区已经创建，无需在创建store");
         return;  //如果已经加载，就不在加载
     }
     NSError *error = nil;
-    _store  = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[self storeURL] options:nil error:&error];
+    
+#warning 禁用SQLite日志模式
+    NSDictionary *options = @{NSSQLitePragmasOption: @{@"journal_mode":@"DELETE"}};
+    _store  = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[self storeURL] options:options error:&error];
     if (!_store) {
         NSLog(@"Failed to add store Error: %@",error);
     }else {

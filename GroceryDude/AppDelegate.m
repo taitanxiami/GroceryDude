@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Item+CoreDataProperties.h"
 #define DEBGU 1
 @interface AppDelegate ()
 
@@ -31,6 +32,7 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     [[self cdh] saveContext];
+    [self demo];
 
 }
 
@@ -61,5 +63,43 @@
         [_coreDataHelper setupCoreData];
     }
     return _coreDataHelper;
+}
+
+- (void)demo {
+    
+    if (DEBGU == 1) {
+        NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+//    NSArray *newItems = @[@"Apples",@"Milk",@"Bread",@"Cheese",@"Sausages",@"Butter",@"Orange Juice",@"Cereal",@"Coffee",@"Eggs",@"Tomatoes",@"Fish"];
+//
+//    for (NSString *itemName in newItems) {
+        //插入数据
+//        Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
+//        item.name = itemName;
+//        NSLog(@"Insert New Managerd Object for '%@'",item.name);
+//    }
+    
+    
+    //获取数据
+    NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Item"];
+    //对搜索结果排序
+    NSSortDescriptor *sortDes = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    req.sortDescriptors = @[sortDes];
+    
+    //对搜索结果筛选
+    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"name != %@",@"Eggs"];
+    req.predicate = filterPredicate;
+    NSError *error = nil;
+    NSArray *items =  [_coreDataHelper.context executeFetchRequest:req error:&error];
+    if (error) {
+        NSLog(@"Failed to fecth items: %@", error);
+    }else {
+        for (Item *item in items) {
+            NSLog(@"Item name: %@",item.name);
+        }
+    }
+    
+
 }
 @end
