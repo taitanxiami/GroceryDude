@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Item+CoreDataProperties.h"
+#import "Measurement+CoreDataProperties.h"
 #define DEBGU 1
 @interface AppDelegate ()
 
@@ -71,14 +72,14 @@
         NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     
-    NSArray *newItems = @[@"Apples",@"Milk",@"Bread",@"Cheese",@"Sausages",@"Butter",@"Orange Juice",@"Cereal",@"Coffee",@"Eggs",@"Tomatoes",@"Fish"];
-
-    for (NSString *itemName in newItems) {
-//        插入数据
-        Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
-        item.name = itemName;
-        NSLog(@"Insert New Managerd Object for '%@'",item.name);
-    }
+//    NSArray *newItems = @[@"Apples",@"Milk",@"Bread",@"Cheese",@"Sausages",@"Butter",@"Orange Juice",@"Cereal",@"Coffee",@"Eggs",@"Tomatoes",@"Fish"];
+//
+//    for (NSString *itemName in newItems) {
+////        插入数据
+//        Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:_coreDataHelper.context];
+//        item.name = itemName;
+//        NSLog(@"Insert New Managerd Object for '%@'",item.name);
+//    }
     
     
     //获取数据
@@ -108,6 +109,15 @@
 //        [_coreDataHelper saveContext];
 //    }
     
+    //添加测试数据
+    for (int i =0 ; i< 5000; i++) {
+        
+        Measurement *measurement = [NSEntityDescription insertNewObjectForEntityForName:@"Measurement" inManagedObjectContext:_coreDataHelper.context];
+        measurement.abc = [NSString stringWithFormat:@"---> LOTS OF TEST DATA %i",i];
+        NSLog(@"Inserted %@", measurement.abc);
+    }
+    
+    [_coreDataHelper saveContext];
 
 }
 @end

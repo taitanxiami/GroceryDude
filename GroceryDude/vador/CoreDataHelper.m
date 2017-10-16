@@ -87,7 +87,7 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
     NSDictionary *options = @{
                               NSSQLitePragmasOption: @{@"journal_mode":@"DELETE"}
                               ,NSMigratePersistentStoresAutomaticallyOption:@YES
-                              ,NSInferMappingModelAutomaticallyOption:@YES
+                              ,NSInferMappingModelAutomaticallyOption:@NO
                               };
     
     _store  = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType

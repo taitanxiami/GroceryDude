@@ -18,6 +18,8 @@
 		843AD9301F9389AB00C787A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843AD92F1F9389AB00C787A1 /* CoreData.framework */; };
 		843E259A1F93A16C00FF554F /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E25981F93A16C00FF554F /* Item+CoreDataClass.m */; };
 		843E259B1F93A16C00FF554F /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */; };
+		B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */; };
+		B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,11 @@
 		843E25981F93A16C00FF554F /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
 		843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B45D96DE1F9473BC00E12922 /* GroceryDude 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 2.xcdatamodel"; sourceTree = "<group>"; };
+		B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
+		B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
+		B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B45D96EB1F9478DE00E12922 /* GroceryDude 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 3.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +81,10 @@
 		843AD9101F9387D900C787A1 /* GroceryDude */ = {
 			isa = PBXGroup;
 			children = (
+				B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */,
+				B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */,
+				B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */,
+				B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */,
 				843E25961F93A16C00FF554F /* Item+CoreDataProperties.h */,
 				843E25971F93A16C00FF554F /* Item+CoreDataClass.h */,
 				843E25981F93A16C00FF554F /* Item+CoreDataClass.m */,
@@ -181,10 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */,
 				843AD91C1F9387D900C787A1 /* GroceryDude.xcdatamodeld in Sources */,
 				843E259B1F93A16C00FF554F /* Item+CoreDataProperties.m in Sources */,
 				843AD9161F9387D900C787A1 /* ViewController.m in Sources */,
 				843AD9241F9387D900C787A1 /* main.m in Sources */,
+				B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */,
 				843AD92C1F9388CA00C787A1 /* CoreDataHelper.m in Sources */,
 				843E259A1F93A16C00FF554F /* Item+CoreDataClass.m in Sources */,
 				843AD9131F9387D900C787A1 /* AppDelegate.m in Sources */,
@@ -372,6 +385,7 @@
 		843AD91A1F9387D900C787A1 /* GroceryDude.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B45D96EB1F9478DE00E12922 /* GroceryDude 3.xcdatamodel */,
 				B45D96DE1F9473BC00E12922 /* GroceryDude 2.xcdatamodel */,
 				843AD91B1F9387D900C787A1 /* GroceryDude.xcdatamodel */,
 			);
