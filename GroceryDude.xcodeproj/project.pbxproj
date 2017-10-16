@@ -14,6 +14,10 @@
 		843AD91E1F9387D900C787A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843AD91D1F9387D900C787A1 /* Assets.xcassets */; };
 		843AD9211F9387D900C787A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843AD91F1F9387D900C787A1 /* LaunchScreen.storyboard */; };
 		843AD9241F9387D900C787A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AD9231F9387D900C787A1 /* main.m */; };
+		843AD92C1F9388CA00C787A1 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AD92B1F9388CA00C787A1 /* CoreDataHelper.m */; };
+		843AD9301F9389AB00C787A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843AD92F1F9389AB00C787A1 /* CoreData.framework */; };
+		843E259A1F93A16C00FF554F /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E25981F93A16C00FF554F /* Item+CoreDataClass.m */; };
+		843E259B1F93A16C00FF554F /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,13 @@
 		843AD9201F9387D900C787A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843AD9221F9387D900C787A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843AD9231F9387D900C787A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		843AD92A1F9388CA00C787A1 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		843AD92B1F9388CA00C787A1 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		843AD92F1F9389AB00C787A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		843E25961F93A16C00FF554F /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		843E25971F93A16C00FF554F /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		843E25981F93A16C00FF554F /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843AD9301F9389AB00C787A1 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +58,7 @@
 			children = (
 				843AD9101F9387D900C787A1 /* GroceryDude */,
 				843AD90F1F9387D900C787A1 /* Products */,
+				843AD92E1F9389AA00C787A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +73,11 @@
 		843AD9101F9387D900C787A1 /* GroceryDude */ = {
 			isa = PBXGroup;
 			children = (
+				843E25961F93A16C00FF554F /* Item+CoreDataProperties.h */,
+				843E25971F93A16C00FF554F /* Item+CoreDataClass.h */,
+				843E25981F93A16C00FF554F /* Item+CoreDataClass.m */,
+				843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */,
+				843AD92D1F9388DC00C787A1 /* vador */,
 				843AD9111F9387D900C787A1 /* AppDelegate.h */,
 				843AD9121F9387D900C787A1 /* AppDelegate.m */,
 				843AD9141F9387D900C787A1 /* ViewController.h */,
@@ -72,6 +90,23 @@
 				843AD91A1F9387D900C787A1 /* GroceryDude.xcdatamodeld */,
 			);
 			path = GroceryDude;
+			sourceTree = "<group>";
+		};
+		843AD92D1F9388DC00C787A1 /* vador */ = {
+			isa = PBXGroup;
+			children = (
+				843AD92A1F9388CA00C787A1 /* CoreDataHelper.h */,
+				843AD92B1F9388CA00C787A1 /* CoreDataHelper.m */,
+			);
+			path = vador;
+			sourceTree = "<group>";
+		};
+		843AD92E1F9389AA00C787A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				843AD92F1F9389AB00C787A1 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +181,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				843AD91C1F9387D900C787A1 /* GroceryDude.xcdatamodeld in Sources */,
+				843E259B1F93A16C00FF554F /* Item+CoreDataProperties.m in Sources */,
 				843AD9161F9387D900C787A1 /* ViewController.m in Sources */,
 				843AD9241F9387D900C787A1 /* main.m in Sources */,
+				843AD92C1F9388CA00C787A1 /* CoreDataHelper.m in Sources */,
+				843E259A1F93A16C00FF554F /* Item+CoreDataClass.m in Sources */,
 				843AD9131F9387D900C787A1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
