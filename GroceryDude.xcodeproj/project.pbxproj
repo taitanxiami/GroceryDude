@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		843AD9131F9387D900C787A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AD9121F9387D900C787A1 /* AppDelegate.m */; };
-		843AD9161F9387D900C787A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AD9151F9387D900C787A1 /* ViewController.m */; };
 		843AD9191F9387D900C787A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843AD9171F9387D900C787A1 /* Main.storyboard */; };
 		843AD91E1F9387D900C787A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843AD91D1F9387D900C787A1 /* Assets.xcassets */; };
 		843AD9211F9387D900C787A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843AD91F1F9387D900C787A1 /* LaunchScreen.storyboard */; };
@@ -21,6 +20,7 @@
 		B40E31311F95DCB800A0A6F5 /* Amount+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E312E1F95DCB800A0A6F5 /* Amount+CoreDataClass.m */; };
 		B40E31321F95DCB800A0A6F5 /* Amount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E31301F95DCB800A0A6F5 /* Amount+CoreDataProperties.m */; };
 		B40E31341F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B40E31331F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel */; };
+		B40E313A1F95E4C700A0A6F5 /* MigrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E31391F95E4C700A0A6F5 /* MigrationVC.m */; };
 		B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */; };
 		B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
@@ -29,8 +29,6 @@
 		843AD90E1F9387D900C787A1 /* GroceryDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		843AD9111F9387D900C787A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		843AD9121F9387D900C787A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		843AD9141F9387D900C787A1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		843AD9151F9387D900C787A1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		843AD9181F9387D900C787A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843AD91D1F9387D900C787A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843AD9201F9387D900C787A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		B40E312F1F95DCB800A0A6F5 /* Amount+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amount+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B40E31301F95DCB800A0A6F5 /* Amount+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Amount+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B40E31331F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model2Model3.xcmappingmodel; sourceTree = "<group>"; };
+		B40E31381F95E4C700A0A6F5 /* MigrationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MigrationVC.h; sourceTree = "<group>"; };
+		B40E31391F95E4C700A0A6F5 /* MigrationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MigrationVC.m; sourceTree = "<group>"; };
 		B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
 		B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
 		B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -89,24 +89,11 @@
 		843AD9101F9387D900C787A1 /* GroceryDude */ = {
 			isa = PBXGroup;
 			children = (
-				B40E31331F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel */,
-				B40E312D1F95DCB800A0A6F5 /* Amount+CoreDataClass.h */,
-				B40E312E1F95DCB800A0A6F5 /* Amount+CoreDataClass.m */,
-				B40E312F1F95DCB800A0A6F5 /* Amount+CoreDataProperties.h */,
-				B40E31301F95DCB800A0A6F5 /* Amount+CoreDataProperties.m */,
-				B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */,
-				B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */,
-				B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */,
-				B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */,
-				843E25961F93A16C00FF554F /* Item+CoreDataProperties.h */,
-				843E25971F93A16C00FF554F /* Item+CoreDataClass.h */,
-				843E25981F93A16C00FF554F /* Item+CoreDataClass.m */,
-				843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */,
+				B40E31371F95E48A00A0A6F5 /* ViewController */,
+				B40E31361F95E47900A0A6F5 /* Models */,
 				843AD92D1F9388DC00C787A1 /* vador */,
 				843AD9111F9387D900C787A1 /* AppDelegate.h */,
 				843AD9121F9387D900C787A1 /* AppDelegate.m */,
-				843AD9141F9387D900C787A1 /* ViewController.h */,
-				843AD9151F9387D900C787A1 /* ViewController.m */,
 				843AD9171F9387D900C787A1 /* Main.storyboard */,
 				843AD91D1F9387D900C787A1 /* Assets.xcassets */,
 				843AD91F1F9387D900C787A1 /* LaunchScreen.storyboard */,
@@ -132,6 +119,35 @@
 				843AD92F1F9389AB00C787A1 /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B40E31361F95E47900A0A6F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B40E31331F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel */,
+				B40E312D1F95DCB800A0A6F5 /* Amount+CoreDataClass.h */,
+				B40E312E1F95DCB800A0A6F5 /* Amount+CoreDataClass.m */,
+				B40E312F1F95DCB800A0A6F5 /* Amount+CoreDataProperties.h */,
+				B40E31301F95DCB800A0A6F5 /* Amount+CoreDataProperties.m */,
+				B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */,
+				B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */,
+				B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */,
+				B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */,
+				843E25961F93A16C00FF554F /* Item+CoreDataProperties.h */,
+				843E25971F93A16C00FF554F /* Item+CoreDataClass.h */,
+				843E25981F93A16C00FF554F /* Item+CoreDataClass.m */,
+				843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B40E31371F95E48A00A0A6F5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B40E31381F95E4C700A0A6F5 /* MigrationVC.h */,
+				B40E31391F95E4C700A0A6F5 /* MigrationVC.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +223,8 @@
 			files = (
 				B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */,
 				843E259B1F93A16C00FF554F /* Item+CoreDataProperties.m in Sources */,
-				843AD9161F9387D900C787A1 /* ViewController.m in Sources */,
 				B40E31311F95DCB800A0A6F5 /* Amount+CoreDataClass.m in Sources */,
+				B40E313A1F95E4C700A0A6F5 /* MigrationVC.m in Sources */,
 				B40E31321F95DCB800A0A6F5 /* Amount+CoreDataProperties.m in Sources */,
 				B40821EE1F94B83100217F67 /* GroceryDude.xcdatamodeld in Sources */,
 				843AD9241F9387D900C787A1 /* main.m in Sources */,
