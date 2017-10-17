@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Item+CoreDataProperties.h"
 #import "Measurement+CoreDataProperties.h"
+#import "Amount+CoreDataProperties.h"
 #define DEBGU 1
 @interface AppDelegate ()
 
@@ -110,14 +111,28 @@
 //    }
     
     //添加测试数据
-    for (int i =0 ; i< 5000; i++) {
-        
-        Measurement *measurement = [NSEntityDescription insertNewObjectForEntityForName:@"Measurement" inManagedObjectContext:_coreDataHelper.context];
-        measurement.abc = [NSString stringWithFormat:@"---> LOTS OF TEST DATA %i",i];
-        NSLog(@"Inserted %@", measurement.abc);
-    }
-    
-    [_coreDataHelper saveContext];
+//    for (int i =0 ; i< 5000; i++) {
+//
+//        Measurement *measurement = [NSEntityDescription insertNewObjectForEntityForName:@"Measurement" inManagedObjectContext:_coreDataHelper.context];
+//        measurement.abc = [NSString stringWithFormat:@"---> LOTS OF TEST DATA %i",i];
+//        NSLog(@"Inserted %@", measurement.abc);
+//    }
+//
+//    [_coreDataHelper saveContext];
 
+    
+    
+        NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Amount"];
+        [req setFetchLimit:50];
+        NSError *error = nil;
+        NSArray *items =  [_coreDataHelper.context executeFetchRequest:req error:&error];
+        if (error) {
+            NSLog(@"Failed to fecth items: %@", error);
+        }else {
+            for (Amount *amount in items) {
+                NSLog(@"Item name: %@",amount.xyz);
+            }
+       
+        }
 }
 @end
