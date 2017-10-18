@@ -133,6 +133,8 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
             NSLog(@"context saved changes to persitent store");
         }else {
             NSLog(@"Failed to save context: %@", error);
+            
+            [self showValidationError:error];
         }
     }else {
         NSLog(@"Skip context save , there are no changes!");
@@ -290,6 +292,47 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
 
 
 
+
+-(void)showValidationError:(NSError *)anError {
+    
+    if (anError && [anError.domain isEqualToString:@"NSCocoaErrorDomain"]) {
+        NSArray *errors = nil;
+        NSString *text = @"";
+        
+        if (anError.code == NSValidationMultipleErrorsError) {
+            errors = [anError.userInfo objectForKey:NSDetailedErrorsKey];
+        }else {
+            errors = [NSArray arrayWithObject:anError];
+        }
+        
+        if (errors && errors.count > 0) {
+            for (NSError *error in errors) {
+                NSString *entity = [[[error.userInfo objectForKey:@"NSValidationErrorObject"] entity] name];
+                NSString *property = [error.userInfo objectForKey:@"NSValidationErrorKey"];
+                
+                switch (error.code) {
+                    case NSValidationRelationshipDeniedDeleteError:
+                        text = [text stringByAppendingFormat:@"%@ delete was denied because there are associated %@\n(Error code %li)\n\n",entity, property, error.code];
+                        break;
+                        
+                    default:
+                        text = [text stringByAppendingFormat:@"Unhandled error code %li in showValidationError mthod.", error.code];
+                        break;
+                }
+            }
+            
+            UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:@"Validation Error" message:text preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alertViewController addAction:sure];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertViewController animated:YES completion:nil];
+            
+        }
+    }
+    
+}
 
 
 

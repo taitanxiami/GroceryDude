@@ -1,5 +1,5 @@
 //
-//  Item+CoreDataClass.h
+//  Location+CoreDataClass.h
 //  GroceryDude
 //
 //  Created by dianda on 2017/10/18.
@@ -10,14 +10,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class LocationAtHome, LocationAtShop, Unit;
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Item : NSManagedObject
+@interface Location : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "Item+CoreDataProperties.h"
+#import "Location+CoreDataProperties.h"

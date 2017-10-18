@@ -16,18 +16,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Item *> *)fetchRequest;
 
-//是否拿到了所在购买的商品，购物清单中可以勾掉
 @property (nonatomic) BOOL collected;
-//是否出现在购物清单中
 @property (nonatomic) BOOL listed;
 @property (nullable, nonatomic, copy) NSString *name;
-//图片
 @property (nullable, nonatomic, retain) NSData *photoData;
-//数量
 @property (nonatomic) float quantity;
-
-//计量单位
+@property (nullable, nonatomic, retain) NSSet<LocationAtHome *> *locationAtHome;
+@property (nullable, nonatomic, retain) NSSet<LocationAtShop *> *locationAtShop;
 @property (nullable, nonatomic, retain) Unit *unit;
+
+@end
+
+@interface Item (CoreDataGeneratedAccessors)
+
+- (void)addLocationAtHomeObject:(LocationAtHome *)value;
+- (void)removeLocationAtHomeObject:(LocationAtHome *)value;
+- (void)addLocationAtHome:(NSSet<LocationAtHome *> *)values;
+- (void)removeLocationAtHome:(NSSet<LocationAtHome *> *)values;
+
+- (void)addLocationAtShopObject:(LocationAtShop *)value;
+- (void)removeLocationAtShopObject:(LocationAtShop *)value;
+- (void)addLocationAtShop:(NSSet<LocationAtShop *> *)values;
+- (void)removeLocationAtShop:(NSSet<LocationAtShop *> *)values;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -20,6 +20,8 @@
 @dynamic name;
 @dynamic photoData;
 @dynamic quantity;
+@dynamic locationAtHome;
+@dynamic locationAtShop;
 @dynamic unit;
 
 @end

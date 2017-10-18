@@ -136,24 +136,73 @@
 //        }
     
     
-    Unit *kg = [NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:[[self cdh] context]];
-    Item *orange = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[[self cdh] context]];
+//    Unit *kg = [NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:[[self cdh] context]];
+//    Item *orange = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[[self cdh] context]];
+//
+//    Item *bananas = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[[self cdh] context]];
+//
+//    kg.name = @"Kg";
+//    orange.name = @"Orange";
+//    orange.quantity = 1;
+//    orange.listed = YES;
+//    orange.unit = kg;
+//
+//
+//    bananas.name = @"Bananas";
+//    bananas.quantity = 4;
+//    bananas.listed = YES;
+//    bananas.unit = kg;
+//
+//    [[self cdh] saveContext];
     
-    Item *bananas = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[[self cdh] context]];
-    
-    kg.name = @"Kg";
-    orange.name = @"Orange";
-    orange.quantity = 1;
-    orange.listed = YES;
-    orange.unit = kg;
     
     
-    bananas.name = @"Bananas";
-    bananas.quantity = 4;
-    bananas.listed = YES;
-    bananas.unit = kg;
-    
-    [[self cdh] saveContext];
+//    [self showItemAndUnitCount];
+//    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+//    NSPredicate *p = [NSPredicate predicateWithFormat:@"name == %@",@"Kg"];
+//    [req setPredicate:p];
+//    NSArray *kgUnits = [[[self cdh] context] executeFetchRequest:req error:nil];
+//    for (Unit *u in kgUnits) {
+//        [_coreDataHelper.context deleteObject:u];
+//    }
+//    [self showItemAndUnitCount];
+//    [_coreDataHelper saveContext];
     
 }
+
+- (void)showItemAndUnitCount {
+    
+    NSFetchRequest *items = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    NSError *error = nil;
+    NSArray *fetchItems = [[[self cdh] context] executeFetchRequest:items error:&error];
+    if (fetchItems) {
+        NSLog(@"Fetch %lu Item", fetchItems.count);
+    }else {
+        NSLog(@"ItemError");
+    }
+    
+    
+    
+    NSFetchRequest *units = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+    error = nil;
+    NSArray *fetchUnits = [[[self cdh] context] executeFetchRequest:units error:&error];
+    if (fetchUnits) {
+        NSLog(@"Fetch %lu Unit", fetchUnits.count);
+    }else {
+        NSLog(@"UnitError");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end
