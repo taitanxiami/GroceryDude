@@ -73,6 +73,9 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
 
 
 - (void)loadStore {
+    
+    
+    
     if (DEBGU == 1) {
         NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
@@ -83,23 +86,32 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
     }
     NSError *error = nil;
     
-#warning 禁用SQLite日志模式
-    NSDictionary *options = @{
-                              NSSQLitePragmasOption: @{@"journal_mode":@"DELETE"}
-                              ,NSMigratePersistentStoresAutomaticallyOption:@YES
-                              ,NSInferMappingModelAutomaticallyOption:@NO
-                              };
     
-    _store  = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                         configuration:nil
-                                                   URL:[self storeURL]
-                                               options:options
-                                                 error:&error];
-    if (!_store) {
-        NSLog(@"Failed to add store Error: %@",error);
+    
+    BOOL useMigrationManager = YES;
+    if (useMigrationManager && [self isMifrationNeccessnaryForStore:[self storeURL]]) {
+        [self performBackgroundManagerMigrationForStore:[self storeURL]];
     }else {
-        NSLog(@"Successfully added store");
+#warning 禁用SQLite日志模式
+        NSDictionary *options = @{
+                                  NSSQLitePragmasOption: @{@"journal_mode":@"DELETE"}
+                                  ,NSMigratePersistentStoresAutomaticallyOption:@YES
+                                  ,NSInferMappingModelAutomaticallyOption:@NO
+                                  };
+        
+        _store  = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                             configuration:nil
+                                                       URL:[self storeURL]
+                                                   options:options
+                                                     error:&error];
+        if (!_store) {
+            NSLog(@"Failed to add store Error: %@",error);
+        }else {
+            NSLog(@"Successfully added store");
+        }
+
     }
+    
     
 }
 - (void)setupCoreData {
@@ -259,6 +271,15 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
         if (done) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
+                NSError *error = nil;
+                _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[ self storeURL] options:nil error:&error];
+                if (!_store) {
+                    NSLog(@"Failed to add a migrated store: %@",error); abort();
+                }else {
+                    NSLog(@"Successfully added migration store: %@", _store);
+                    [self.migrationVC dismissViewControllerAnimated:NO completion:nil];
+                    self.migrationVC = nil;
+                }
             });
         }
     });

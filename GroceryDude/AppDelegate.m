@@ -10,6 +10,8 @@
 #import "Item+CoreDataProperties.h"
 #import "Measurement+CoreDataProperties.h"
 #import "Amount+CoreDataProperties.h"
+#import "Unit+CoreDataProperties.h"
+
 #define DEBGU 1
 @interface AppDelegate ()
 
@@ -120,19 +122,20 @@
 //
 //    [_coreDataHelper saveContext];
 
-    
-    
-        NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Amount"];
+        NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Unit"];
         [req setFetchLimit:50];
         NSError *error = nil;
         NSArray *items =  [_coreDataHelper.context executeFetchRequest:req error:&error];
         if (error) {
             NSLog(@"Failed to fecth items: %@", error);
         }else {
-            for (Amount *amount in items) {
-                NSLog(@"Item name: %@",amount.xyz);
+            for (Unit *amount in items) {
+                NSLog(@"Item name: %@",amount.name);
             }
-       
+
         }
+    
+    
+    
 }
 @end
