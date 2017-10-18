@@ -122,20 +122,38 @@
 //
 //    [_coreDataHelper saveContext];
 
-        NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Unit"];
-        [req setFetchLimit:50];
-        NSError *error = nil;
-        NSArray *items =  [_coreDataHelper.context executeFetchRequest:req error:&error];
-        if (error) {
-            NSLog(@"Failed to fecth items: %@", error);
-        }else {
-            for (Unit *amount in items) {
-                NSLog(@"Item name: %@",amount.name);
-            }
-
-        }
+//        NSFetchRequest *req = [[NSFetchRequest alloc]initWithEntityName:@"Unit"];
+//        [req setFetchLimit:50];
+//        NSError *error = nil;
+//        NSArray *items =  [_coreDataHelper.context executeFetchRequest:req error:&error];
+//        if (error) {
+//            NSLog(@"Failed to fecth items: %@", error);
+//        }else {
+//            for (Unit *amount in items) {
+//                NSLog(@"Item name: %@",amount.name);
+//            }
+//
+//        }
     
     
+    Unit *kg = [NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:[[self cdh] context]];
+    Item *orange = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[[self cdh] context]];
+    
+    Item *bananas = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[[self cdh] context]];
+    
+    kg.name = @"Kg";
+    orange.name = @"Orange";
+    orange.quantity = 1;
+    orange.listed = YES;
+    orange.unit = kg;
+    
+    
+    bananas.name = @"Bananas";
+    bananas.quantity = 4;
+    bananas.listed = YES;
+    bananas.unit = kg;
+    
+    [[self cdh] saveContext];
     
 }
 @end

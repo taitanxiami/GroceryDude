@@ -14,16 +14,16 @@
 		843AD9241F9387D900C787A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AD9231F9387D900C787A1 /* main.m */; };
 		843AD92C1F9388CA00C787A1 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 843AD92B1F9388CA00C787A1 /* CoreDataHelper.m */; };
 		843AD9301F9389AB00C787A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843AD92F1F9389AB00C787A1 /* CoreData.framework */; };
-		843E259A1F93A16C00FF554F /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E25981F93A16C00FF554F /* Item+CoreDataClass.m */; };
-		843E259B1F93A16C00FF554F /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */; };
 		B40821EE1F94B83100217F67 /* GroceryDude.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B40821EB1F94B83000217F67 /* GroceryDude.xcdatamodeld */; };
 		B40E31311F95DCB800A0A6F5 /* Amount+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E312E1F95DCB800A0A6F5 /* Amount+CoreDataClass.m */; };
 		B40E31321F95DCB800A0A6F5 /* Amount+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E31301F95DCB800A0A6F5 /* Amount+CoreDataProperties.m */; };
 		B40E31341F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B40E31331F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel */; };
 		B40E313A1F95E4C700A0A6F5 /* MigrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E31391F95E4C700A0A6F5 /* MigrationVC.m */; };
 		B40E31431F97017D00A0A6F5 /* Model3toModel4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = B40E31421F97017D00A0A6F5 /* Model3toModel4.xcmappingmodel */; };
-		B40E31481F97049300A0A6F5 /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E31451F97049300A0A6F5 /* Unit+CoreDataClass.m */; };
-		B40E31491F97049300A0A6F5 /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E31471F97049300A0A6F5 /* Unit+CoreDataProperties.m */; };
+		B40E31531F97268100A0A6F5 /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E314C1F97268100A0A6F5 /* Item+CoreDataClass.m */; };
+		B40E31541F97268100A0A6F5 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E314E1F97268100A0A6F5 /* Item+CoreDataProperties.m */; };
+		B40E31551F97268100A0A6F5 /* Unit+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E31501F97268100A0A6F5 /* Unit+CoreDataClass.m */; };
+		B40E31561F97268100A0A6F5 /* Unit+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E31521F97268100A0A6F5 /* Unit+CoreDataProperties.m */; };
 		B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */; };
 		B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
@@ -40,10 +40,6 @@
 		843AD92A1F9388CA00C787A1 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		843AD92B1F9388CA00C787A1 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		843AD92F1F9389AB00C787A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		843E25961F93A16C00FF554F /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
-		843E25971F93A16C00FF554F /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
-		843E25981F93A16C00FF554F /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
-		843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B40821EC1F94B83000217F67 /* GroceryDude 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 2.xcdatamodel"; sourceTree = "<group>"; };
 		B40821ED1F94B83000217F67 /* GroceryDude.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryDude.xcdatamodel; sourceTree = "<group>"; };
 		B40E31261F95DC1100A0A6F5 /* GroceryDude 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 3.xcdatamodel"; sourceTree = "<group>"; };
@@ -56,10 +52,15 @@
 		B40E31391F95E4C700A0A6F5 /* MigrationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MigrationVC.m; sourceTree = "<group>"; };
 		B40E313B1F9700FC00A0A6F5 /* GroceryDude 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 4.xcdatamodel"; sourceTree = "<group>"; };
 		B40E31421F97017D00A0A6F5 /* Model3toModel4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model3toModel4.xcmappingmodel; sourceTree = "<group>"; };
-		B40E31441F97049300A0A6F5 /* Unit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataClass.h"; sourceTree = "<group>"; };
-		B40E31451F97049300A0A6F5 /* Unit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataClass.m"; sourceTree = "<group>"; };
-		B40E31461F97049300A0A6F5 /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
-		B40E31471F97049300A0A6F5 /* Unit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B40E314A1F971F1200A0A6F5 /* GroceryDude 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroceryDude 5.xcdatamodel"; sourceTree = "<group>"; };
+		B40E314B1F97268100A0A6F5 /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		B40E314C1F97268100A0A6F5 /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		B40E314D1F97268100A0A6F5 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B40E314E1F97268100A0A6F5 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B40E314F1F97268100A0A6F5 /* Unit+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataClass.h"; sourceTree = "<group>"; };
+		B40E31501F97268100A0A6F5 /* Unit+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataClass.m"; sourceTree = "<group>"; };
+		B40E31511F97268100A0A6F5 /* Unit+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit+CoreDataProperties.h"; sourceTree = "<group>"; };
+		B40E31521F97268100A0A6F5 /* Unit+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Unit+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
 		B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
 		B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -133,10 +134,14 @@
 		B40E31361F95E47900A0A6F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B40E31441F97049300A0A6F5 /* Unit+CoreDataClass.h */,
-				B40E31451F97049300A0A6F5 /* Unit+CoreDataClass.m */,
-				B40E31461F97049300A0A6F5 /* Unit+CoreDataProperties.h */,
-				B40E31471F97049300A0A6F5 /* Unit+CoreDataProperties.m */,
+				B40E314B1F97268100A0A6F5 /* Item+CoreDataClass.h */,
+				B40E314C1F97268100A0A6F5 /* Item+CoreDataClass.m */,
+				B40E314D1F97268100A0A6F5 /* Item+CoreDataProperties.h */,
+				B40E314E1F97268100A0A6F5 /* Item+CoreDataProperties.m */,
+				B40E314F1F97268100A0A6F5 /* Unit+CoreDataClass.h */,
+				B40E31501F97268100A0A6F5 /* Unit+CoreDataClass.m */,
+				B40E31511F97268100A0A6F5 /* Unit+CoreDataProperties.h */,
+				B40E31521F97268100A0A6F5 /* Unit+CoreDataProperties.m */,
 				B40E312D1F95DCB800A0A6F5 /* Amount+CoreDataClass.h */,
 				B40E312E1F95DCB800A0A6F5 /* Amount+CoreDataClass.m */,
 				B40E312F1F95DCB800A0A6F5 /* Amount+CoreDataProperties.h */,
@@ -145,10 +150,6 @@
 				B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */,
 				B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */,
 				B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */,
-				843E25961F93A16C00FF554F /* Item+CoreDataProperties.h */,
-				843E25971F93A16C00FF554F /* Item+CoreDataClass.h */,
-				843E25981F93A16C00FF554F /* Item+CoreDataClass.m */,
-				843E25991F93A16C00FF554F /* Item+CoreDataProperties.m */,
 				B40E31331F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel */,
 				B40E31421F97017D00A0A6F5 /* Model3toModel4.xcmappingmodel */,
 			);
@@ -236,19 +237,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */,
-				843E259B1F93A16C00FF554F /* Item+CoreDataProperties.m in Sources */,
 				B40E31311F95DCB800A0A6F5 /* Amount+CoreDataClass.m in Sources */,
 				B40E313A1F95E4C700A0A6F5 /* MigrationVC.m in Sources */,
 				B40E31321F95DCB800A0A6F5 /* Amount+CoreDataProperties.m in Sources */,
 				B40821EE1F94B83100217F67 /* GroceryDude.xcdatamodeld in Sources */,
-				B40E31491F97049300A0A6F5 /* Unit+CoreDataProperties.m in Sources */,
 				843AD9241F9387D900C787A1 /* main.m in Sources */,
+				B40E31561F97268100A0A6F5 /* Unit+CoreDataProperties.m in Sources */,
+				B40E31541F97268100A0A6F5 /* Item+CoreDataProperties.m in Sources */,
 				B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */,
 				B40E31341F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel in Sources */,
-				B40E31481F97049300A0A6F5 /* Unit+CoreDataClass.m in Sources */,
+				B40E31551F97268100A0A6F5 /* Unit+CoreDataClass.m in Sources */,
 				843AD92C1F9388CA00C787A1 /* CoreDataHelper.m in Sources */,
 				B40E31431F97017D00A0A6F5 /* Model3toModel4.xcmappingmodel in Sources */,
-				843E259A1F93A16C00FF554F /* Item+CoreDataClass.m in Sources */,
+				B40E31531F97268100A0A6F5 /* Item+CoreDataClass.m in Sources */,
 				843AD9131F9387D900C787A1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,12 +435,13 @@
 		B40821EB1F94B83000217F67 /* GroceryDude.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B40E314A1F971F1200A0A6F5 /* GroceryDude 5.xcdatamodel */,
 				B40E313B1F9700FC00A0A6F5 /* GroceryDude 4.xcdatamodel */,
 				B40E31261F95DC1100A0A6F5 /* GroceryDude 3.xcdatamodel */,
 				B40821EC1F94B83000217F67 /* GroceryDude 2.xcdatamodel */,
 				B40821ED1F94B83000217F67 /* GroceryDude.xcdatamodel */,
 			);
-			currentVersion = B40E313B1F9700FC00A0A6F5 /* GroceryDude 4.xcdatamodel */;
+			currentVersion = B40E314A1F971F1200A0A6F5 /* GroceryDude 5.xcdatamodel */;
 			path = GroceryDude.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

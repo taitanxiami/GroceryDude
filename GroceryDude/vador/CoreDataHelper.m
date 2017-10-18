@@ -88,7 +88,7 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
     
     
     
-    BOOL useMigrationManager = YES;
+    BOOL useMigrationManager = NO;
     if (useMigrationManager && [self isMifrationNeccessnaryForStore:[self storeURL]]) {
         [self performBackgroundManagerMigrationForStore:[self storeURL]];
     }else {

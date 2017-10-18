@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.m
 //  GroceryDude
 //
-//  Created by taitanxiami on 2017/10/15.
+//  Created by dianda on 2017/10/18.
 //  Copyright © 2017年 taitanxiami. All rights reserved.
 //
 //
@@ -15,10 +15,11 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"Item"];
 }
 
-@dynamic name;
-@dynamic quantity;
-@dynamic photoData;
-@dynamic listed;
 @dynamic collected;
+@dynamic listed;
+@dynamic name;
+@dynamic photoData;
+@dynamic quantity;
+@dynamic unit;
 
 @end

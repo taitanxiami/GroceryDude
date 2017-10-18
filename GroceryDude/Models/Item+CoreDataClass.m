@@ -2,7 +2,7 @@
 //  Item+CoreDataClass.m
 //  GroceryDude
 //
-//  Created by taitanxiami on 2017/10/15.
+//  Created by dianda on 2017/10/18.
 //  Copyright © 2017年 taitanxiami. All rights reserved.
 //
 //
