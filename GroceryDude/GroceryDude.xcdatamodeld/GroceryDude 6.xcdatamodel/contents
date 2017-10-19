@@ -6,8 +6,8 @@
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="New Item" spotlightIndexingEnabled="YES" syncable="YES"/>
         <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="locationAtHome" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LocationAtHome" inverseName="items" inverseEntity="LocationAtHome" syncable="YES"/>
-        <relationship name="locationAtShop" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LocationAtShop" inverseName="items" inverseEntity="LocationAtShop" syncable="YES"/>
+        <relationship name="locationAtHome" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationAtHome" inverseName="items" inverseEntity="LocationAtHome" syncable="YES"/>
+        <relationship name="locationAtShop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationAtShop" inverseName="items" inverseEntity="LocationAtShop" syncable="YES"/>
         <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="items" inverseEntity="Unit" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName="Location" isAbstract="YES" syncable="YES">
@@ -28,7 +28,7 @@
     <fetchRequest name="Test" entity="Item" predicateString="name != &quot;Eggs&quot;"/>
     <elements>
         <element name="Item" positionX="-11" positionY="-117" width="128" height="163"/>
-        <element name="Location" positionX="-569" positionY="-9" width="128" height="58"/>
+        <element name="Location" positionX="-351" positionY="-18" width="128" height="58"/>
         <element name="LocationAtHome" positionX="-281" positionY="-162" width="128" height="73"/>
         <element name="LocationAtShop" positionX="-270" positionY="108" width="128" height="73"/>
         <element name="Unit" positionX="180" positionY="-9" width="128" height="73"/>

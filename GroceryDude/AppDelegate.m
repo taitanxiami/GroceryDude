@@ -11,6 +11,8 @@
 #import "Measurement+CoreDataProperties.h"
 #import "Amount+CoreDataProperties.h"
 #import "Unit+CoreDataProperties.h"
+#import "LocationAtHome+CoreDataClass.h"
+#import "LocationAtShop+CoreDataProperties.h"
 
 #define DEBGU 1
 @interface AppDelegate ()
@@ -63,7 +65,11 @@
     }
     
     if (!_coreDataHelper) {
-        _coreDataHelper = [CoreDataHelper new];
+        
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            _coreDataHelper = [CoreDataHelper new];
+        });
         [_coreDataHelper setupCoreData];
     }
     return _coreDataHelper;
@@ -167,6 +173,40 @@
 //    }
 //    [self showItemAndUnitCount];
 //    [_coreDataHelper saveContext];
+    
+    
+
+//    CoreDataHelper *cdh = [self cdh];
+//    NSArray *homeLocations = [NSArray arrayWithObjects:@"Fruit Bowl", @"Pantry", @"Nursery", @"Bathrrom",@"Fridge" ,nil];
+//    NSArray *shopLocations = [NSArray arrayWithObjects:@"Produce", @"Aisle 1", @"Aisle 2", @"Aisle 3",@"Aisle 4" ,nil];
+//    NSArray *unitNames = @[@"kg",@"g",@"box",@"ml",@"pkt"];
+//    NSArray *itemsNames = @[@"Grapes",@"Biscuits",@"Nappies",@"Shampoo",@"Sausages"];
+//    int i = 0;
+//
+//    for (NSString *itemName in itemsNames) {
+//
+//        LocationAtHome *locationAtHome = [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtHome" inManagedObjectContext:[cdh context]];
+//        LocationAtShop *locationAtShop = [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtShop" inManagedObjectContext:[cdh context]];
+//
+//        Unit *unit = [NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:[cdh context]];
+//
+//        Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[cdh context]];
+//
+//        locationAtHome.storedIn = homeLocations[i];
+//        locationAtShop.aisle = shopLocations[i];
+//        unit.name = unitNames[i];
+//        item.name = itemName;
+//
+//        item.locationAtHome = locationAtHome;
+//        item.locationAtShop = locationAtShop;
+//
+//        item.unit = unit;
+//        item.quantity = i;
+//        i++;
+//    }
+//
+//    [cdh saveContext];
+
     
 }
 

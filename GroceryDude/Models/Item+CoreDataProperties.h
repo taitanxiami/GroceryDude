@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.h
 //  GroceryDude
 //
-//  Created by dianda on 2017/10/18.
+//  Created by dianda on 2017/10/19.
 //  Copyright © 2017年 taitanxiami. All rights reserved.
 //
 //
@@ -21,23 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, retain) NSData *photoData;
 @property (nonatomic) float quantity;
-@property (nullable, nonatomic, retain) NSSet<LocationAtHome *> *locationAtHome;
-@property (nullable, nonatomic, retain) NSSet<LocationAtShop *> *locationAtShop;
+@property (nullable, nonatomic, retain) LocationAtHome *locationAtHome;
+@property (nullable, nonatomic, retain) LocationAtShop *locationAtShop;
 @property (nullable, nonatomic, retain) Unit *unit;
-
-@end
-
-@interface Item (CoreDataGeneratedAccessors)
-
-- (void)addLocationAtHomeObject:(LocationAtHome *)value;
-- (void)removeLocationAtHomeObject:(LocationAtHome *)value;
-- (void)addLocationAtHome:(NSSet<LocationAtHome *> *)values;
-- (void)removeLocationAtHome:(NSSet<LocationAtHome *> *)values;
-
-- (void)addLocationAtShopObject:(LocationAtShop *)value;
-- (void)removeLocationAtShopObject:(LocationAtShop *)value;
-- (void)addLocationAtShop:(NSSet<LocationAtShop *> *)values;
-- (void)removeLocationAtShop:(NSSet<LocationAtShop *> *)values;
 
 @end
 
