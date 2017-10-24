@@ -87,14 +87,30 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-//        Item *deleteItem = self.frc
+        Item *deleteItem = [self.frc objectAtIndexPath:indexPath];
+        [self.frc.managedObjectContext deleteObject:deleteItem];
+        
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSManagedObjectID *itemId = [[self.frc objectAtIndexPath:indexPath] objectID];
+    
+    Item *item = [self.frc.managedObjectContext existingObjectWithID:itemId error:nil];
+    
+    if (item.listed) {
+        item.listed = NO;
+    }else {
+        item.listed = YES;
+        item.collected = NO;
+      [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade]; 
+    }
+}
 
 /*
 // Override to support rearranging the table view.
