@@ -7,7 +7,7 @@
 //
 
 #import "PrepareTVC.h"
-
+#import "ItemVC.h"
 @interface PrepareTVC ()
 
 @end
@@ -96,7 +96,12 @@
         
     }   
 }
-
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    ItemVC *itemVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemVC"];
+    itemVC.selectObjectId = [[self.frc objectAtIndexPath:indexPath] objectID];
+    [self.navigationController pushViewController:itemVC animated:YES];
+    
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSManagedObjectID *itemId = [[self.frc objectAtIndexPath:indexPath] objectID];
@@ -175,5 +180,31 @@
     }
     
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if (DEBUG == 1) {
+        NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+
+  
+    ItemVC *itemVC = segue.destinationViewController;
+  
+    if ([segue.identifier isEqualToString:@"Add New Item"]) {
+        
+        CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+        
+        //插入新数据 - 拿到objectID
+        Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:cdh.context];
+        
+        NSError *error = nil;
+        if (![cdh.context obtainPermanentIDsForObjects:@[newItem] error:&error]) {
+            NSLog(@"Couldn't obtain a permanent ID for object %@", error);
+        }
+      itemVC.selectObjectId = newItem.objectID;
+    }else {
+        NSLog(@"unidentified segue attemped");
+    }
 }
 @end

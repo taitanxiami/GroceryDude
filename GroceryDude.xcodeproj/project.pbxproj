@@ -35,6 +35,7 @@
 		B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */; };
 		B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */; };
 		B4BE43C71FA42DDD00B5AF07 /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43C61FA42DDD00B5AF07 /* ShopTVC.m */; };
+		B4BE43CA1FA474C800B5AF07 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43C91FA474C800B5AF07 /* ItemVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,8 @@
 		B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B4BE43C51FA42DDD00B5AF07 /* ShopTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopTVC.h; sourceTree = "<group>"; };
 		B4BE43C61FA42DDD00B5AF07 /* ShopTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopTVC.m; sourceTree = "<group>"; };
+		B4BE43C81FA474C800B5AF07 /* ItemVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemVC.h; sourceTree = "<group>"; };
+		B4BE43C91FA474C800B5AF07 /* ItemVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 				B40E4C651F98552600EB215D /* PrepareTVC.m */,
 				B4BE43C51FA42DDD00B5AF07 /* ShopTVC.h */,
 				B4BE43C61FA42DDD00B5AF07 /* ShopTVC.m */,
+				B4BE43C81FA474C800B5AF07 /* ItemVC.h */,
+				B4BE43C91FA474C800B5AF07 /* ItemVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				B40E4C811F98A52E00EB215D /* Location+CoreDataClass.m in Sources */,
 				B40E4C7D1F98A52E00EB215D /* Unit+CoreDataClass.m in Sources */,
 				B40E4C7E1F98A52E00EB215D /* Unit+CoreDataProperties.m in Sources */,
+				B4BE43CA1FA474C800B5AF07 /* ItemVC.m in Sources */,
 				B40E4C7C1F98A52E00EB215D /* Item+CoreDataProperties.m in Sources */,
 				B40E313A1F95E4C700A0A6F5 /* MigrationVC.m in Sources */,
 				B40E31321F95DCB800A0A6F5 /* Amount+CoreDataProperties.m in Sources */,
