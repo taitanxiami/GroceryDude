@@ -41,22 +41,20 @@
         return [[self.frc.sections objectAtIndex:section] numberOfObjects];
 }
 
-
+// ================== ABC#=====================
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    
     return [self.frc sectionForSectionIndexTitle:title atIndex:index];
 }
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return  self.frc.sectionIndexTitles;
+}
+// =======================================
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
     return [[self.frc.sections objectAtIndex:section] name];
 }
 
 
-- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    
-    return  self.frc.sectionIndexTitles;
-}
 
 
 
@@ -144,5 +142,72 @@
     }else {
         NSLog(@"Failed to fetch, the fetched results controller is nil.");
     }
+}
+#pragma mark ==================== NSFetchedResultsControllerDelegate ====================
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type {
+    
+    if (DEBGU == 1) {
+        NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            {
+                [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            }
+            break;
+        case  NSFetchedResultsChangeDelete:
+        {
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+        }break;
+        default:
+            break;
+    }
+    
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(nullable NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(nullable NSIndexPath *)newIndexPath {
+    
+    if (DEBGU == 1) {
+        NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            {
+                [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            break;
+        case NSFetchedResultsChangeDelete:
+        {
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+            break;
+        case NSFetchedResultsChangeUpdate:
+        {
+            
+            if (!newIndexPath) {
+                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            }{
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            }
+        }
+            break;
+        case  NSFetchedResultsChangeMove:
+        {
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }break;
+    }
+    
 }
 @end
