@@ -127,4 +127,53 @@
     
     self.frc.delegate = self;
 }
+#pragma mark ==================== INTERACTION ====================
+
+//清除清单里面的数据
+- (IBAction)clear:(id)sender {
+    if (DEBUG == 1) {
+        NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    CoreDataHelper *cdh =[(AppDelegate *)[UIApplication sharedApplication].delegate cdh];
+    //     fetch request templates 获取请求模板
+    NSFetchRequest *req = [[[cdh model] fetchRequestTemplateForName:@"ShopList"] copy];
+    
+    NSArray *shopList = [cdh.context executeFetchRequest:req error:nil];
+    if (shopList.count > 0) {
+        
+        UIAlertController *actionSheetViewController = [UIAlertController alertControllerWithTitle:@"Clear Entire Shopping List?" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [self clearList];
+        }];
+        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [actionSheetViewController addAction:sureAction];
+        [actionSheetViewController addAction:cancleAction];
+        [self.navigationController presentViewController:actionSheetViewController animated:YES completion:nil];
+    }else {
+        UIAlertController *actionSheetViewController = [UIAlertController alertControllerWithTitle:@"Nothing to clear" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [actionSheetViewController addAction:cancleAction];
+        [self.navigationController presentViewController:actionSheetViewController animated:YES completion:nil];
+    }
+    
+}
+
+
+//清单中的数据全部清除
+- (void)clearList {
+    
+    CoreDataHelper *cdh =[(AppDelegate *)[UIApplication sharedApplication].delegate cdh];
+    //     fetch request templates 获取请求模板
+    NSFetchRequest *req = [[[cdh model] fetchRequestTemplateForName:@"ShopList"] copy];
+    NSArray *shopList = [cdh.context executeFetchRequest:req error:nil];
+    for (Item *item in shopList) {
+        item.listed = NO;
+    }
+    
+    
+}
 @end

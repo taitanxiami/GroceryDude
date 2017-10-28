@@ -85,7 +85,13 @@
                             <outlet property="delegate" destination="ub0-fc-8Wd" id="dgu-WM-hmR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grocery Duce" id="SQ4-2L-Ldc"/>
+                    <navigationItem key="navigationItem" title="Grocery Duce" id="SQ4-2L-Ldc">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="K9M-e1-siy">
+                            <connections>
+                                <action selector="clear:" destination="ub0-fc-8Wd" id="rd8-ap-Ggh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFE-ZX-mGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
