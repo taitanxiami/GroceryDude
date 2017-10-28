@@ -34,6 +34,7 @@
 		B40E4C841F98A52E00EB215D /* LocationAtShop+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E4C7A1F98A52E00EB215D /* LocationAtShop+CoreDataProperties.m */; };
 		B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */; };
 		B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */; };
+		B4BE43C71FA42DDD00B5AF07 /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43C61FA42DDD00B5AF07 /* ShopTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,8 @@
 		B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
 		B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B4BE43C51FA42DDD00B5AF07 /* ShopTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopTVC.h; sourceTree = "<group>"; };
+		B4BE43C61FA42DDD00B5AF07 /* ShopTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				B40E4C621F98468100EB215D /* CoreDataTVC.m */,
 				B40E4C641F98552600EB215D /* PrepareTVC.h */,
 				B40E4C651F98552600EB215D /* PrepareTVC.m */,
+				B4BE43C51FA42DDD00B5AF07 /* ShopTVC.h */,
+				B4BE43C61FA42DDD00B5AF07 /* ShopTVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				B40E4C7C1F98A52E00EB215D /* Item+CoreDataProperties.m in Sources */,
 				B40E313A1F95E4C700A0A6F5 /* MigrationVC.m in Sources */,
 				B40E31321F95DCB800A0A6F5 /* Amount+CoreDataProperties.m in Sources */,
+				B4BE43C71FA42DDD00B5AF07 /* ShopTVC.m in Sources */,
 				B40E4C061F97583A00EB215D /* GroceryDude.xcdatamodeld in Sources */,
 				B40E4C7B1F98A52E00EB215D /* Item+CoreDataClass.m in Sources */,
 				843AD9241F9387D900C787A1 /* main.m in Sources */,

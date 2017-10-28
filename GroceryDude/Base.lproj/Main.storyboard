@@ -5,26 +5,9 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="Kut-Qb-jsT">
-            <objects>
-                <viewController id="4d5-p1-CCK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TFb-qG-HbS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="fMR-Z2-9ZS"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="UYT-y1-zl2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i44-kV-74g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="585" y="70"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DSo-hk-cBU">
             <objects>
@@ -109,12 +92,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="4d5-p1-CCK" kind="relationship" relationship="rootViewController" id="15e-a9-26N"/>
+                        <segue destination="IQR-FV-j5P" kind="relationship" relationship="rootViewController" id="kxU-8v-Xh4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W96-fF-q7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-185" y="70"/>
+        </scene>
+        <!--ShopTVC-->
+        <scene sceneID="Vad-pc-Kxe">
+            <objects>
+                <tableViewController id="IQR-FV-j5P" customClass="ShopTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xfp-cH-0oP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="shopCell" id="xSC-ev-yLP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xSC-ev-yLP" id="3kK-nT-iEp">
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IQR-FV-j5P" id="KRo-p4-MG2"/>
+                            <outlet property="delegate" destination="IQR-FV-j5P" id="wcQ-N7-cg8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Nef-Gc-4oY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sy4-Y7-bAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="71"/>
         </scene>
     </scenes>
 </document>
