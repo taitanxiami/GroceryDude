@@ -9,6 +9,9 @@
         <relationship name="locationAtHome" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationAtHome" inverseName="items" inverseEntity="LocationAtHome" syncable="YES"/>
         <relationship name="locationAtShop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationAtShop" inverseName="items" inverseEntity="LocationAtShop" syncable="YES"/>
         <relationship name="unit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="items" inverseEntity="Unit" syncable="YES"/>
+        <fetchIndex name="index">
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <entity name="Location" representedClassName="Location" isAbstract="YES" syncable="YES">
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>

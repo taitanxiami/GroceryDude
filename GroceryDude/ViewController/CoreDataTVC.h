@@ -12,7 +12,7 @@
 @interface CoreDataTVC : UITableViewController <NSFetchedResultsControllerDelegate>
 
 
-@property (nonatomic, strong) NSFetchedResultsController *frc;
+@property (nonatomic, strong) NSFetchedResultsController  *frc;
 
 
 - (void)performFetch;
