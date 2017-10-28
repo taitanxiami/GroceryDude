@@ -99,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="-185" y="70"/>
         </scene>
-        <!--ShopTVC-->
+        <!--Shop-->
         <scene sceneID="Vad-pc-Kxe">
             <objects>
                 <tableViewController id="IQR-FV-j5P" customClass="ShopTVC" sceneMemberID="viewController">
@@ -122,7 +122,13 @@
                             <outlet property="delegate" destination="IQR-FV-j5P" id="wcQ-N7-cg8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Nef-Gc-4oY"/>
+                    <navigationItem key="navigationItem" title="Shop" id="Nef-Gc-4oY">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="hxO-z0-hzl">
+                            <connections>
+                                <action selector="clear:" destination="IQR-FV-j5P" id="4NK-nY-TAA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sy4-Y7-bAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

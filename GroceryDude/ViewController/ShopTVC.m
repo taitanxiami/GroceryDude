@@ -30,7 +30,7 @@
     }
     
     CoreDataHelper *cdh = [(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    NSFetchRequest *req = [[[cdh model] fetchRequestTemplateForName:@"ShopList"] copy];
     req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"locationAtShop.aisle" ascending:YES],[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     [req setFetchBatchSize:50];
     
@@ -68,7 +68,7 @@
     if ((item.collected)) {
         
         [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:18]];
-        [cell.textLabel setTextColor:[UIColor grayColor]];
+        [cell.textLabel setTextColor:[UIColor greenColor]];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }else {
         [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:16]];
@@ -95,6 +95,46 @@
 }
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     return nil;
+}
+
+//清除购物车数据
+- (IBAction)clear:(id)sender {
+    
+    if (DEBUG == 1) {
+        NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    if (self.frc.fetchedObjects.count == 0) {
+        
+        UIAlertController *actionSheetViewController = [UIAlertController alertControllerWithTitle:@"Nothing to clear" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [actionSheetViewController addAction:cancleAction];
+        [self.navigationController presentViewController:actionSheetViewController animated:YES completion:nil];
+        return;
+    }
+    
+    BOOL nothingClear = YES;
+    
+    for (Item *item in self.frc.fetchedObjects) {
+        if (item.collected) {
+            item.listed = NO;
+            item.collected = NO;
+            nothingClear = NO;
+        }
+    }
+    
+    
+    if (nothingClear) {
+        UIAlertController *actionSheetViewController = [UIAlertController alertControllerWithTitle:@"Selected items to be removed from the list before pressing Clear" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [actionSheetViewController addAction:cancleAction];
+        [self.navigationController presentViewController:actionSheetViewController animated:YES completion:nil];
+    }
+    
 }
 
 @end
