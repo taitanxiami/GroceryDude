@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="DSo-hk-cBU">
             <objects>
-                <tabBarController id="Q6d-AQ-rcL" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="Q6d-AQ-rcL" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hiG-Jk-zrq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,13 +24,15 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vf-rT-WVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1324" y="-278"/>
+            <point key="canvasLocation" x="-1558" y="-285"/>
         </scene>
-        <!--prepare-->
+        <!--Navigation Controller-->
         <scene sceneID="PFd-9W-g7i">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eta-em-K7V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="prepare" id="bie-Eg-hhu"/>
+                    <tabBarItem key="tabBarItem" title="" image="detile_prepare_click" selectedImage="detile_prepare_click" id="bie-Eg-hhu">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FCX-4a-xfN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -69,7 +71,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Grocery Duce" id="SQ4-2L-Ldc">
-                        <barButtonItem key="leftBarButtonItem" title="Clear" id="K9M-e1-siy">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" image="clear-data" id="K9M-e1-siy">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="clear:" destination="ub0-fc-8Wd" id="rd8-ap-Ggh"/>
                             </connections>
@@ -80,11 +83,13 @@
             </objects>
             <point key="canvasLocation" x="564" y="-595"/>
         </scene>
-        <!--shop-->
+        <!--Navigation Controller-->
         <scene sceneID="577-xK-p11">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iKl-Y8-Ddh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="shop" id="hfJ-8s-jRi"/>
+                    <tabBarItem key="tabBarItem" title="" image="shop-list" selectedImage="shop-list" id="hfJ-8s-jRi">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cpP-vN-kgs">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -123,7 +128,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Shop" id="Nef-Gc-4oY">
-                        <barButtonItem key="leftBarButtonItem" title="Clear" id="hxO-z0-hzl">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" image="clear-data" id="hxO-z0-hzl">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="clear:" destination="IQR-FV-j5P" id="4NK-nY-TAA"/>
                             </connections>
@@ -135,4 +141,9 @@
             <point key="canvasLocation" x="585" y="71"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clear-data" width="30" height="30"/>
+        <image name="detile_prepare_click" width="30" height="30"/>
+        <image name="shop-list" width="30" height="30"/>
+    </resources>
 </document>
