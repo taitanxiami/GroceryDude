@@ -24,7 +24,7 @@
     [self hideKeyBoardWhenBackgroundIsTapped];
 }
 - (void)viewWillAppear:(BOOL)animated {
-    
+    [super viewWillAppear:animated];
     [self ensureItemHomeLocationIsNotNull];
     [self ensureItemShopLocationIsNotNull];
     [self refreshInterface];
@@ -35,6 +35,7 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
      CoreDataHelper *cdh = [(AppDelegate *)[UIApplication sharedApplication].delegate cdh];
     [cdh saveContext];
 }
