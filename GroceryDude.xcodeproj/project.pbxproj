@@ -38,6 +38,10 @@
 		B4BE43CA1FA474C800B5AF07 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43C91FA474C800B5AF07 /* ItemVC.m */; };
 		B4BE43CD1FA5FEDA00B5AF07 /* UnitsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43CC1FA5FEDA00B5AF07 /* UnitsTVC.m */; };
 		B4BE43D11FA6027600B5AF07 /* UnitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43D01FA6027600B5AF07 /* UnitVC.m */; };
+		B4BE43D71FA61AF200B5AF07 /* LocationAtHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43D61FA61AF200B5AF07 /* LocationAtHomeVC.m */; };
+		B4BE43DA1FA61B0C00B5AF07 /* LocationAtHomeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43D91FA61B0C00B5AF07 /* LocationAtHomeTVC.m */; };
+		B4BE43DD1FA61B2000B5AF07 /* LocationAtShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43DC1FA61B2000B5AF07 /* LocationAtShopTVC.m */; };
+		B4BE43E01FA61B3900B5AF07 /* LocationAtShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43DF1FA61B3900B5AF07 /* LocationAtShopVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +106,14 @@
 		B4BE43CC1FA5FEDA00B5AF07 /* UnitsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitsTVC.m; sourceTree = "<group>"; };
 		B4BE43CF1FA6027600B5AF07 /* UnitVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitVC.h; sourceTree = "<group>"; };
 		B4BE43D01FA6027600B5AF07 /* UnitVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitVC.m; sourceTree = "<group>"; };
+		B4BE43D51FA61AF200B5AF07 /* LocationAtHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtHomeVC.h; sourceTree = "<group>"; };
+		B4BE43D61FA61AF200B5AF07 /* LocationAtHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomeVC.m; sourceTree = "<group>"; };
+		B4BE43D81FA61B0C00B5AF07 /* LocationAtHomeTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtHomeTVC.h; sourceTree = "<group>"; };
+		B4BE43D91FA61B0C00B5AF07 /* LocationAtHomeTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomeTVC.m; sourceTree = "<group>"; };
+		B4BE43DB1FA61B2000B5AF07 /* LocationAtShopTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtShopTVC.h; sourceTree = "<group>"; };
+		B4BE43DC1FA61B2000B5AF07 /* LocationAtShopTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopTVC.m; sourceTree = "<group>"; };
+		B4BE43DE1FA61B3900B5AF07 /* LocationAtShopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtShopVC.h; sourceTree = "<group>"; };
+		B4BE43DF1FA61B3900B5AF07 /* LocationAtShopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +251,10 @@
 		B4BE43D31FA607CC00B5AF07 /* LocationAtHome */ = {
 			isa = PBXGroup;
 			children = (
+				B4BE43D81FA61B0C00B5AF07 /* LocationAtHomeTVC.h */,
+				B4BE43D91FA61B0C00B5AF07 /* LocationAtHomeTVC.m */,
+				B4BE43D51FA61AF200B5AF07 /* LocationAtHomeVC.h */,
+				B4BE43D61FA61AF200B5AF07 /* LocationAtHomeVC.m */,
 			);
 			path = LocationAtHome;
 			sourceTree = "<group>";
@@ -246,6 +262,10 @@
 		B4BE43D41FA607D100B5AF07 /* LocationAtShop */ = {
 			isa = PBXGroup;
 			children = (
+				B4BE43DB1FA61B2000B5AF07 /* LocationAtShopTVC.h */,
+				B4BE43DC1FA61B2000B5AF07 /* LocationAtShopTVC.m */,
+				B4BE43DE1FA61B3900B5AF07 /* LocationAtShopVC.h */,
+				B4BE43DF1FA61B3900B5AF07 /* LocationAtShopVC.m */,
 			);
 			path = LocationAtShop;
 			sourceTree = "<group>";
@@ -330,6 +350,7 @@
 				B40E4C7D1F98A52E00EB215D /* Unit+CoreDataClass.m in Sources */,
 				B40E4C7E1F98A52E00EB215D /* Unit+CoreDataProperties.m in Sources */,
 				B4BE43CA1FA474C800B5AF07 /* ItemVC.m in Sources */,
+				B4BE43D71FA61AF200B5AF07 /* LocationAtHomeVC.m in Sources */,
 				B40E4C7C1F98A52E00EB215D /* Item+CoreDataProperties.m in Sources */,
 				B40E313A1F95E4C700A0A6F5 /* MigrationVC.m in Sources */,
 				B40E31321F95DCB800A0A6F5 /* Amount+CoreDataProperties.m in Sources */,
@@ -338,8 +359,11 @@
 				B40E4C7B1F98A52E00EB215D /* Item+CoreDataClass.m in Sources */,
 				843AD9241F9387D900C787A1 /* main.m in Sources */,
 				B40E4C661F98552600EB215D /* PrepareTVC.m in Sources */,
+				B4BE43DA1FA61B0C00B5AF07 /* LocationAtHomeTVC.m in Sources */,
+				B4BE43DD1FA61B2000B5AF07 /* LocationAtShopTVC.m in Sources */,
 				B40E4C7F1F98A52E00EB215D /* LocationAtHome+CoreDataClass.m in Sources */,
 				B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */,
+				B4BE43E01FA61B3900B5AF07 /* LocationAtShopVC.m in Sources */,
 				B40E31341F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel in Sources */,
 				843AD92C1F9388CA00C787A1 /* CoreDataHelper.m in Sources */,
 				B4BE43D11FA6027600B5AF07 /* UnitVC.m in Sources */,
