@@ -11,6 +11,8 @@
 #import "CoreDataHelper.h"
 #import "AppDelegate.h"
 #import "Item+CoreDataProperties.h"
+#import "LocationAtHome+CoreDataProperties.h"
+#import "LocationAtShop+CoreDataProperties.h"
 @interface ItemVC : UIViewController
 
 @property (strong, nonatomic) NSManagedObjectID *selectObjectId;

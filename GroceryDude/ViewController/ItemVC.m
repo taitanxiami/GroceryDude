@@ -24,6 +24,9 @@
     [self hideKeyBoardWhenBackgroundIsTapped];
 }
 - (void)viewWillAppear:(BOOL)animated {
+    
+    [self ensureItemHomeLocationIsNotNull];
+    [self ensureItemShopLocationIsNotNull];
     [self refreshInterface];
     if ([self.nameTextField.text isEqualToString:@"New Item"]) {
         self.nameTextField.text = @"";
@@ -94,8 +97,69 @@
         self.nameTextField.text = item.name;
         self.quantityTextField.text  = [NSString stringWithFormat:@"%f",item.quantity];
     }
-    
 }
+
+ #pragma mark ==================== DATA ====================
+
+- (void)ensureItemHomeLocationIsNotNull {
+    if (DEBUG == 1) {
+        NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    if (self.selectObjectId) {
+        CoreDataHelper *cdh = [(AppDelegate *)[UIApplication sharedApplication].delegate cdh];
+        Item *item = [cdh.context existingObjectWithID:self.selectObjectId error:nil];
+        if (!item.locationAtHome) {
+            
+            NSFetchRequest *request = [[cdh model] fetchRequestTemplateForName:@"UnknownLocationAtHome"];
+            NSArray *fetchObjects = [cdh.context executeFetchRequest:request error:nil];
+            if (fetchObjects.count > 0) {
+                item.locationAtHome = fetchObjects.firstObject;
+                
+            }else {
+                LocationAtHome *lcHome = [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtHome" inManagedObjectContext:cdh.context];
+                NSError *error = nil;
+                
+                if (![cdh.context obtainPermanentIDsForObjects:@[lcHome] error:&error]) {
+                    NSLog(@"Couldn't obtain a permanent ID for Object %@",error);
+                }
+                lcHome.storedIn = @"..Unknown Location..";
+                item.locationAtHome = lcHome;
+            }
+        }
+        
+    }
+}
+
+- (void)ensureItemShopLocationIsNotNull {
+    
+    if (DEBUG == 1) {
+        NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    
+    if (self.selectObjectId) {
+        CoreDataHelper *cdh = [(AppDelegate *)[UIApplication sharedApplication].delegate cdh];
+        Item *item = [cdh.context existingObjectWithID:self.selectObjectId error:nil];
+        if (!item.locationAtShop) {
+            
+            NSFetchRequest *request = [[cdh model] fetchRequestTemplateForName:@"UnknownLocationAtShop"];
+            NSArray *fetchObjects = [cdh.context executeFetchRequest:request error:nil];
+            if (fetchObjects.count > 0) {
+                item.locationAtShop = fetchObjects.firstObject;
+                
+            }else {
+                LocationAtShop *lcShop= [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtShop" inManagedObjectContext:cdh.context];
+                NSError *error = nil;
+                
+                if (![cdh.context obtainPermanentIDsForObjects:@[lcShop] error:&error]) {
+                    NSLog(@"Couldn't obtain a permanent ID for Object %@",error);
+                }
+                lcShop.aisle = @"..Unknown Location..";
+                item.locationAtShop = lcShop;
+            }
+        }
+        
+    }}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
