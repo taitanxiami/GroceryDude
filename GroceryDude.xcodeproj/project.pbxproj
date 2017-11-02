@@ -32,8 +32,10 @@
 		B40E4C821F98A52E00EB215D /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E4C761F98A52E00EB215D /* Location+CoreDataProperties.m */; };
 		B40E4C831F98A52E00EB215D /* LocationAtShop+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E4C781F98A52E00EB215D /* LocationAtShop+CoreDataClass.m */; };
 		B40E4C841F98A52E00EB215D /* LocationAtShop+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E4C7A1F98A52E00EB215D /* LocationAtShop+CoreDataProperties.m */; };
+		B45513F51FAB0EAA00E103A4 /* UnitPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B45513F41FAB0EAA00E103A4 /* UnitPickerTF.m */; };
 		B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */; };
 		B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */; };
+		B46C93041FA7255900F7C9EA /* CoreDataPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B46C93031FA7255900F7C9EA /* CoreDataPickerTF.m */; };
 		B4BE43C71FA42DDD00B5AF07 /* ShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43C61FA42DDD00B5AF07 /* ShopTVC.m */; };
 		B4BE43CA1FA474C800B5AF07 /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43C91FA474C800B5AF07 /* ItemVC.m */; };
 		B4BE43CD1FA5FEDA00B5AF07 /* UnitsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43CC1FA5FEDA00B5AF07 /* UnitsTVC.m */; };
@@ -94,10 +96,14 @@
 		B40E4C781F98A52E00EB215D /* LocationAtShop+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtShop+CoreDataClass.m"; sourceTree = "<group>"; };
 		B40E4C791F98A52E00EB215D /* LocationAtShop+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationAtShop+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B40E4C7A1F98A52E00EB215D /* LocationAtShop+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtShop+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B45513F31FAB0EAA00E103A4 /* UnitPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitPickerTF.h; sourceTree = "<group>"; };
+		B45513F41FAB0EAA00E103A4 /* UnitPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitPickerTF.m; sourceTree = "<group>"; };
 		B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
 		B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
 		B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B46C93021FA7255900F7C9EA /* CoreDataPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataPickerTF.h; sourceTree = "<group>"; };
+		B46C93031FA7255900F7C9EA /* CoreDataPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataPickerTF.m; sourceTree = "<group>"; };
 		B4BE43C51FA42DDD00B5AF07 /* ShopTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopTVC.h; sourceTree = "<group>"; };
 		B4BE43C61FA42DDD00B5AF07 /* ShopTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopTVC.m; sourceTree = "<group>"; };
 		B4BE43C81FA474C800B5AF07 /* ItemVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemVC.h; sourceTree = "<group>"; };
@@ -168,6 +174,10 @@
 			children = (
 				843AD92A1F9388CA00C787A1 /* CoreDataHelper.h */,
 				843AD92B1F9388CA00C787A1 /* CoreDataHelper.m */,
+				B46C93021FA7255900F7C9EA /* CoreDataPickerTF.h */,
+				B46C93031FA7255900F7C9EA /* CoreDataPickerTF.m */,
+				B45513F31FAB0EAA00E103A4 /* UnitPickerTF.h */,
+				B45513F41FAB0EAA00E103A4 /* UnitPickerTF.m */,
 			);
 			path = vador;
 			sourceTree = "<group>";
@@ -349,6 +359,7 @@
 				B40E4C811F98A52E00EB215D /* Location+CoreDataClass.m in Sources */,
 				B40E4C7D1F98A52E00EB215D /* Unit+CoreDataClass.m in Sources */,
 				B40E4C7E1F98A52E00EB215D /* Unit+CoreDataProperties.m in Sources */,
+				B46C93041FA7255900F7C9EA /* CoreDataPickerTF.m in Sources */,
 				B4BE43CA1FA474C800B5AF07 /* ItemVC.m in Sources */,
 				B4BE43D71FA61AF200B5AF07 /* LocationAtHomeVC.m in Sources */,
 				B40E4C7C1F98A52E00EB215D /* Item+CoreDataProperties.m in Sources */,
@@ -362,6 +373,7 @@
 				B4BE43DA1FA61B0C00B5AF07 /* LocationAtHomeTVC.m in Sources */,
 				B4BE43DD1FA61B2000B5AF07 /* LocationAtShopTVC.m in Sources */,
 				B40E4C7F1F98A52E00EB215D /* LocationAtHome+CoreDataClass.m in Sources */,
+				B45513F51FAB0EAA00E103A4 /* UnitPickerTF.m in Sources */,
 				B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */,
 				B4BE43E01FA61B3900B5AF07 /* LocationAtShopVC.m in Sources */,
 				B40E31341F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel in Sources */,

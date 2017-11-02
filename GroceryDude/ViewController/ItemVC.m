@@ -7,12 +7,14 @@
 //
 
 #import "ItemVC.h"
+#import "UnitPickerTF.h"
 
-@interface ItemVC ()<UITextFieldDelegate>
+@interface ItemVC ()<UITextFieldDelegate,CoreDataPickerTFDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
+@property (weak, nonatomic) IBOutlet UnitPickerTF *unitTextField;
 @end
 
 @implementation ItemVC
@@ -22,6 +24,10 @@
     [super viewDidLoad];
     
     [self hideKeyBoardWhenBackgroundIsTapped];
+    
+    self.unitTextField.delegate = self;
+    self.unitTextField.pickerTFDelegate = self;
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -70,6 +76,12 @@
             self.nameTextField.text = @"";
         }
     }
+    
+    if (textField == self.unitTextField && self.unitTextField.pickerView) {
+        
+        [self.unitTextField fetch];
+        [self.unitTextField.pickerView reloadAllComponents];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -87,6 +99,43 @@
     }
 }
 
+
+- (void)selectedObjectID:(NSManagedObjectID *)objectID changedForPickerTF:(CoreDataPickerTF *)pickerTF {
+    
+    if(self.selectObjectId) {
+        CoreDataHelper *cdh = [(AppDelegate *)[UIApplication sharedApplication].delegate cdh];
+        
+        
+        Item *item = [cdh.context existingObjectWithID:self.selectObjectId error:nil];
+        
+        NSError *error = nil;
+        if (pickerTF == self.unitTextField) {
+            Unit *unit =[cdh.context existingObjectWithID:objectID error:&error];
+            
+            item.unit = unit;
+            self.unitTextField.text = unit.name;
+        }
+        
+        [self refreshInterface];
+    }
+    
+}
+
+- (void)selectedObjectClearForPickerTF:(CoreDataPickerTF *)pickerTF {
+    
+    if (self.selectObjectId) {
+        CoreDataHelper *cdh = [(AppDelegate *)[UIApplication sharedApplication].delegate cdh];
+        Item *item = [cdh.context existingObjectWithID:self.selectObjectId error:nil];
+        
+        if (pickerTF == self.unitTextField) {
+            item.unit = nil;
+            self.unitTextField.text = @"";
+        }
+        [self refreshInterface];
+        
+        
+    }
+}
 #pragma mark ==================== VIEW ====================
 
 //刷新页面
