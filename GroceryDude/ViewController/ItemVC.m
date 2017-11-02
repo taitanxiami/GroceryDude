@@ -8,6 +8,8 @@
 
 #import "ItemVC.h"
 #import "UnitPickerTF.h"
+#import "LocationAtHomePickerTF.h"
+#import "LocationAtShopPickerTF.h"
 
 @interface ItemVC ()<UITextFieldDelegate,CoreDataPickerTFDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -15,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
 @property (weak, nonatomic) IBOutlet UnitPickerTF *unitTextField;
+@property (weak, nonatomic) IBOutlet LocationAtHomePickerTF *locationAtHomeTextField;
+@property (weak, nonatomic) IBOutlet LocationAtShopPickerTF *locationAtShopTextField;
 @end
 
 @implementation ItemVC
@@ -27,7 +31,10 @@
     
     self.unitTextField.delegate = self;
     self.unitTextField.pickerTFDelegate = self;
-    
+    self.locationAtHomeTextField.delegate = self;
+    self.locationAtHomeTextField.pickerTFDelegate = self;
+    self.locationAtShopTextField.delegate = self;
+    self.locationAtShopTextField.pickerTFDelegate = self;
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -82,6 +89,17 @@
         [self.unitTextField fetch];
         [self.unitTextField.pickerView reloadAllComponents];
     }
+    
+    if (textField == self.locationAtHomeTextField && self.locationAtHomeTextField.pickerView) {
+        
+        [self.locationAtHomeTextField fetch];
+        [self.locationAtHomeTextField.pickerView reloadAllComponents];
+    }
+    if (textField == self.locationAtShopTextField && self.locationAtShopTextField.pickerView) {
+        
+        [self.locationAtShopTextField fetch];
+        [self.locationAtShopTextField.pickerView reloadAllComponents];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -111,11 +129,20 @@
         NSError *error = nil;
         if (pickerTF == self.unitTextField) {
             Unit *unit =[cdh.context existingObjectWithID:objectID error:&error];
-            
             item.unit = unit;
             self.unitTextField.text = unit.name;
         }
-        
+        if (pickerTF == self.locationAtHomeTextField) {
+            LocationAtHome *locationAtHome =[cdh.context existingObjectWithID:objectID error:&error];
+            item.locationAtHome = locationAtHome;
+            self.locationAtHomeTextField.text = locationAtHome.storedIn;
+        }
+        if (pickerTF == self.locationAtShopTextField) {
+            LocationAtShop *locationAtShop =[cdh.context existingObjectWithID:objectID error:&error];
+            item.locationAtShop = locationAtShop;
+            self.locationAtShopTextField.text = locationAtShop.aisle;
+        }
+
         [self refreshInterface];
     }
     
@@ -130,6 +157,14 @@
         if (pickerTF == self.unitTextField) {
             item.unit = nil;
             self.unitTextField.text = @"";
+        }
+        if (pickerTF == self.locationAtHomeTextField) {
+            item.locationAtHome = nil;
+            self.locationAtHomeTextField.text = @"";
+        }
+        if (pickerTF == self.locationAtShopTextField) {
+            item.locationAtShop = nil;
+            self.locationAtShopTextField.text = @"";
         }
         [self refreshInterface];
         
@@ -146,6 +181,15 @@
         Item *item = [cdh.context existingObjectWithID:self.selectObjectId error:nil];
         self.nameTextField.text = item.name;
         self.quantityTextField.text  = [NSString stringWithFormat:@"%f",item.quantity];
+        
+        self.unitTextField.text = item.unit.name;
+        self.unitTextField.selectedID = item.unit.objectID;
+        
+        self.locationAtHomeTextField.text = item.locationAtHome.storedIn;
+        self.locationAtHomeTextField.selectedID = item.locationAtHome.objectID;
+        
+        self.locationAtShopTextField.text = item.locationAtShop.aisle;
+        self.locationAtShopTextField.selectedID = item.locationAtShop.objectID;
     }
 }
 

@@ -33,6 +33,8 @@
 		B40E4C831F98A52E00EB215D /* LocationAtShop+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E4C781F98A52E00EB215D /* LocationAtShop+CoreDataClass.m */; };
 		B40E4C841F98A52E00EB215D /* LocationAtShop+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E4C7A1F98A52E00EB215D /* LocationAtShop+CoreDataProperties.m */; };
 		B45513F51FAB0EAA00E103A4 /* UnitPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B45513F41FAB0EAA00E103A4 /* UnitPickerTF.m */; };
+		B45513F81FAB1C1F00E103A4 /* LocationAtHomePickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B45513F71FAB1C1F00E103A4 /* LocationAtHomePickerTF.m */; };
+		B45513FB1FAB1C3400E103A4 /* LocationAtShopPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B45513FA1FAB1C3400E103A4 /* LocationAtShopPickerTF.m */; };
 		B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */; };
 		B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */; };
 		B46C93041FA7255900F7C9EA /* CoreDataPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B46C93031FA7255900F7C9EA /* CoreDataPickerTF.m */; };
@@ -98,6 +100,10 @@
 		B40E4C7A1F98A52E00EB215D /* LocationAtShop+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LocationAtShop+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B45513F31FAB0EAA00E103A4 /* UnitPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitPickerTF.h; sourceTree = "<group>"; };
 		B45513F41FAB0EAA00E103A4 /* UnitPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitPickerTF.m; sourceTree = "<group>"; };
+		B45513F61FAB1C1F00E103A4 /* LocationAtHomePickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtHomePickerTF.h; sourceTree = "<group>"; };
+		B45513F71FAB1C1F00E103A4 /* LocationAtHomePickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomePickerTF.m; sourceTree = "<group>"; };
+		B45513F91FAB1C3300E103A4 /* LocationAtShopPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtShopPickerTF.h; sourceTree = "<group>"; };
+		B45513FA1FAB1C3400E103A4 /* LocationAtShopPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopPickerTF.m; sourceTree = "<group>"; };
 		B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
 		B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
 		B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -178,6 +184,10 @@
 				B46C93031FA7255900F7C9EA /* CoreDataPickerTF.m */,
 				B45513F31FAB0EAA00E103A4 /* UnitPickerTF.h */,
 				B45513F41FAB0EAA00E103A4 /* UnitPickerTF.m */,
+				B45513F61FAB1C1F00E103A4 /* LocationAtHomePickerTF.h */,
+				B45513F71FAB1C1F00E103A4 /* LocationAtHomePickerTF.m */,
+				B45513F91FAB1C3300E103A4 /* LocationAtShopPickerTF.h */,
+				B45513FA1FAB1C3400E103A4 /* LocationAtShopPickerTF.m */,
 			);
 			path = vador;
 			sourceTree = "<group>";
@@ -351,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45513F81FAB1C1F00E103A4 /* LocationAtHomePickerTF.m in Sources */,
 				B40E4C631F98468100EB215D /* CoreDataTVC.m in Sources */,
 				B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */,
 				B40E4C801F98A52E00EB215D /* LocationAtHome+CoreDataProperties.m in Sources */,
@@ -359,6 +370,7 @@
 				B40E4C811F98A52E00EB215D /* Location+CoreDataClass.m in Sources */,
 				B40E4C7D1F98A52E00EB215D /* Unit+CoreDataClass.m in Sources */,
 				B40E4C7E1F98A52E00EB215D /* Unit+CoreDataProperties.m in Sources */,
+				B45513FB1FAB1C3400E103A4 /* LocationAtShopPickerTF.m in Sources */,
 				B46C93041FA7255900F7C9EA /* CoreDataPickerTF.m in Sources */,
 				B4BE43CA1FA474C800B5AF07 /* ItemVC.m in Sources */,
 				B4BE43D71FA61AF200B5AF07 /* LocationAtHomeVC.m in Sources */,

@@ -103,7 +103,7 @@
     if ([segue.identifier isEqualToString:@"Add Object Segue"]) {
         
         CoreDataHelper *cdh = [(AppDelegate *)[UIApplication sharedApplication].delegate  cdh];
-        LocationAtHome *locationAtHome = [NSEntityDescription insertNewObjectForEntityForName:@"Unit" inManagedObjectContext:cdh.context];
+        LocationAtHome *locationAtHome = [NSEntityDescription insertNewObjectForEntityForName:@"LocationAtHome" inManagedObjectContext:cdh.context];
         
         NSError *error = nil;
         //把临时id 存储为永久id

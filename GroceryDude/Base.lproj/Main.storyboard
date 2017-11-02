@@ -175,15 +175,39 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-Pb-boy" customClass="LocationAtHomePickerTF">
+                                                <rect key="frame" x="209" y="185" width="80" height="45"/>
+                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="jJL-ob-HZx"/>
+                                                    <constraint firstAttribute="width" constant="80" id="qnN-SJ-A4y"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wol-X7-yH1" customClass="LocationAtShopPickerTF">
+                                                <rect key="frame" x="209" y="253" width="80" height="45"/>
+                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="ZZ4-6n-c2x"/>
+                                                    <constraint firstAttribute="width" constant="80" id="aGF-LK-Jo3"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="wol-X7-yH1" firstAttribute="centerY" secondItem="5uq-Gn-umZ" secondAttribute="centerY" id="19w-1q-AH3"/>
                                             <constraint firstAttribute="trailing" secondItem="6By-rJ-fVZ" secondAttribute="trailing" constant="8" id="8Ie-9G-KYu"/>
                                             <constraint firstItem="6By-rJ-fVZ" firstAttribute="top" secondItem="QCf-cu-qi5" secondAttribute="top" constant="19" id="9GQ-AQ-rzI"/>
                                             <constraint firstAttribute="trailing" secondItem="r11-gg-pUb" secondAttribute="trailing" constant="39" id="9a9-1s-wUE"/>
                                             <constraint firstAttribute="trailing" secondItem="5uq-Gn-umZ" secondAttribute="trailing" constant="39" id="E6I-fP-Zac"/>
                                             <constraint firstItem="nKu-86-fjr" firstAttribute="leading" secondItem="6By-rJ-fVZ" secondAttribute="leading" id="FCJ-vo-afu"/>
                                             <constraint firstItem="5uq-Gn-umZ" firstAttribute="top" secondItem="r11-gg-pUb" secondAttribute="bottom" constant="38" id="Lpf-wN-x3l"/>
+                                            <constraint firstItem="5uq-Gn-umZ" firstAttribute="leading" secondItem="wol-X7-yH1" secondAttribute="trailing" constant="17" id="MFr-wb-JDD"/>
                                             <constraint firstItem="nKu-86-fjr" firstAttribute="top" secondItem="6By-rJ-fVZ" secondAttribute="bottom" constant="8" id="Z0c-3Z-DQO"/>
                                             <constraint firstItem="hEM-3D-Wwy" firstAttribute="centerY" secondItem="qX0-zK-3A0" secondAttribute="centerY" id="cZ8-tW-FSO"/>
                                             <constraint firstItem="qX0-zK-3A0" firstAttribute="top" secondItem="6By-rJ-fVZ" secondAttribute="bottom" constant="74" id="f2k-oH-Ef6"/>
@@ -191,7 +215,9 @@
                                             <constraint firstItem="6By-rJ-fVZ" firstAttribute="leading" secondItem="QCf-cu-qi5" secondAttribute="leading" constant="8" id="oXp-K5-DkT"/>
                                             <constraint firstAttribute="trailing" secondItem="qX0-zK-3A0" secondAttribute="trailing" constant="39" id="qAU-eB-SCO"/>
                                             <constraint firstItem="r11-gg-pUb" firstAttribute="top" secondItem="qX0-zK-3A0" secondAttribute="bottom" constant="34" id="tgs-wm-DaH"/>
+                                            <constraint firstItem="r11-gg-pUb" firstAttribute="leading" secondItem="Sht-Pb-boy" secondAttribute="trailing" constant="17" id="tse-VB-fyH"/>
                                             <constraint firstItem="nKu-86-fjr" firstAttribute="width" secondItem="6By-rJ-fVZ" secondAttribute="width" multiplier="1/2" id="ufg-Y3-Bkf"/>
+                                            <constraint firstItem="Sht-Pb-boy" firstAttribute="centerY" secondItem="r11-gg-pUb" secondAttribute="centerY" id="zcG-14-cEd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -223,6 +249,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationAtHomeTextField" destination="Sht-Pb-boy" id="Rkb-QP-2tt"/>
+                        <outlet property="locationAtShopTextField" destination="wol-X7-yH1" id="jq7-AW-AlU"/>
                         <outlet property="nameTextField" destination="6By-rJ-fVZ" id="G2N-ox-WtZ"/>
                         <outlet property="quantityTextField" destination="nKu-86-fjr" id="Tku-Bw-lgf"/>
                         <outlet property="scrollView" destination="aSb-pz-zCo" id="p2c-PG-G2e"/>
