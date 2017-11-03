@@ -35,6 +35,7 @@
 		B45513F51FAB0EAA00E103A4 /* UnitPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B45513F41FAB0EAA00E103A4 /* UnitPickerTF.m */; };
 		B45513F81FAB1C1F00E103A4 /* LocationAtHomePickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B45513F71FAB1C1F00E103A4 /* LocationAtHomePickerTF.m */; };
 		B45513FB1FAB1C3400E103A4 /* LocationAtShopPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B45513FA1FAB1C3400E103A4 /* LocationAtShopPickerTF.m */; };
+		B45514001FAC447100E103A4 /* DefaultData.xml in Resources */ = {isa = PBXBuildFile; fileRef = B45513FF1FAC447000E103A4 /* DefaultData.xml */; };
 		B45D96E91F9477A000E12922 /* Measurement+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */; };
 		B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45D96E81F9477A000E12922 /* Measurement+CoreDataProperties.m */; };
 		B46C93041FA7255900F7C9EA /* CoreDataPickerTF.m in Sources */ = {isa = PBXBuildFile; fileRef = B46C93031FA7255900F7C9EA /* CoreDataPickerTF.m */; };
@@ -104,6 +105,7 @@
 		B45513F71FAB1C1F00E103A4 /* LocationAtHomePickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtHomePickerTF.m; sourceTree = "<group>"; };
 		B45513F91FAB1C3300E103A4 /* LocationAtShopPickerTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtShopPickerTF.h; sourceTree = "<group>"; };
 		B45513FA1FAB1C3400E103A4 /* LocationAtShopPickerTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopPickerTF.m; sourceTree = "<group>"; };
+		B45513FF1FAC447000E103A4 /* DefaultData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DefaultData.xml; sourceTree = "<group>"; };
 		B45D96E51F9477A000E12922 /* Measurement+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataClass.h"; sourceTree = "<group>"; };
 		B45D96E61F9477A000E12922 /* Measurement+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Measurement+CoreDataClass.m"; sourceTree = "<group>"; };
 		B45D96E71F9477A000E12922 /* Measurement+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Measurement+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		843AD92D1F9388DC00C787A1 /* vador */ = {
 			isa = PBXGroup;
 			children = (
+				B45513FF1FAC447000E103A4 /* DefaultData.xml */,
 				843AD92A1F9388CA00C787A1 /* CoreDataHelper.h */,
 				843AD92B1F9388CA00C787A1 /* CoreDataHelper.m */,
 				B46C93021FA7255900F7C9EA /* CoreDataPickerTF.h */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				843AD9211F9387D900C787A1 /* LaunchScreen.storyboard in Resources */,
+				B45514001FAC447100E103A4 /* DefaultData.xml in Resources */,
 				843AD91E1F9387D900C787A1 /* Assets.xcassets in Resources */,
 				843AD9191F9387D900C787A1 /* Main.storyboard in Resources */,
 			);

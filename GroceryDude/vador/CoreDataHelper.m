@@ -67,6 +67,15 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
         _coordinator = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:_model];
         _context = [[NSManagedObjectContext alloc]initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_context setPersistentStoreCoordinator:_coordinator];
+        
+        
+        _importContext = [[NSManagedObjectContext alloc]initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        [_importContext performBlockAndWait:^{
+           
+            [_importContext setPersistentStoreCoordinator:_coordinator];
+            [_importContext setUndoManager:nil]; // 默认为nil
+        }];
+        
     }
     return self;
 }
@@ -90,7 +99,7 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
     
     BOOL useMigrationManager = NO;
     if (useMigrationManager && [self isMifrationNeccessnaryForStore:[self storeURL]]) {
-        [self performBackgroundManagerMigrationForStore:[self storeURL]];
+//        [self performBackgroundManagerMigrationForStore:[self storeURL]];
     }else {
 #warning 禁用SQLite日志模式
         NSDictionary *options = @{
@@ -120,6 +129,7 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
     }
     
     [self loadStore];
+    [self checkIfDefaultDataNeedsImporting];
 }
 #pragma mark ====================  SAVING ====================
 - (void)saveContext {
@@ -245,18 +255,19 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
         
         dispatch_async(dispatch_get_main_queue(), ^{
            
-            float progress = [[change objectForKey:NSKeyValueChangeNewKey] floatValue];
-            
-            self.migrationVC.progressView.progress = progress;
-            int percentage = progress * 100;
-            NSString *string = [NSString stringWithFormat:@"Migration Progress %d%%",percentage];
-            self.migrationVC.lable.text = string;
-            NSLog(@"%@", string);
+//            float progress = [[change objectForKey:NSKeyValueChangeNewKey] floatValue];
+//
+//            self.migrationVC.progressView.progress = progress;
+//            int percentage = progress * 100;
+//            NSString *string = [NSString stringWithFormat:@"Migration Progress %d%%",percentage];
+//            self.migrationVC.lable.text = string;
+//            NSLog(@"%@", string);
         });
         
     }
 }
 
+#if 0
 - (void)performBackgroundManagerMigrationForStore:(NSURL *)storeUrl {
     
      if (DEBGU == 1) {  NSLog(@"Runing %@ '%@'", self.class, NSStringFromSelector(_cmd));}
@@ -285,9 +296,9 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
             });
         }
     });
-    
-    
 }
+
+#endif
 
 
 
@@ -336,16 +347,91 @@ static NSString *storeFileName = @"GroceryDude.sqlite";
 
 
 
+#pragma mark ==================== DATA IMPORTER ====================
+
+- (BOOL)isDefaultDataAlreadyImportedForStoreWithUrl:(NSURL *)url {
+    
+    NSError *error = nil;
+    NSDictionary *dic = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:url options:nil error:&error];
+    if (error) {
+        NSLog(@"Error reading persistent store metadata:%@",error.localizedDescription);
+    }else {
+        
+        NSNumber *defaultDataAlreadyUmported = [dic valueForKey:@"DefaultDataImported"];
+        
+        if (![defaultDataAlreadyUmported boolValue]) {
+            NSLog(@"Default data has NOT already been imported");
+            return NO;
+        }
+    }        
+    return YES;
+}
+
+
+//检测是否需要导入数据
+- (void)checkIfDefaultDataNeedsImporting {
+    
+    if (![self isDefaultDataAlreadyImportedForStoreWithUrl:[self storeURL]]) {
+//        self.importAlertView = [UIAlertController alertControllerWithTitle:@"Import Default Data?" message:@"If you never used Grocery Dude before then some default data might help you understand how to use it. Tap 'Import' to import default data. Tap 'Cancle' to skip the import, especially if you're done this beforr on other devices." preferredStyle:UIAlertControllerStyleAlert];
+//
+//        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"Cancle" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//
+//        }];
+//
+//        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"Import" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//
+//        }];
+//
+//        [self.importAlertView addAction:cancleAction];
+//        [self.importAlertView addAction:sureAction];
+//
+//        UIWindow *w = [(AppDelegate *)[UIApplication sharedApplication].delegate window];
+//        [w.rootViewController presentViewController:self.importAlertView animated:YES completion:nil];
+        
+        self.importAlertView = [[UIAlertView alloc]initWithTitle:@"Import Default Data?" message:@"If you never used Grocery Dude before then some default data might help you understand how to use it. Tap 'Import' to import default data. Tap 'Cancle' to skip the import, especially if you're done this beforr on other devices." delegate:self cancelButtonTitle:@"Cancle" otherButtonTitles:@"Import", nil];
+        [self.importAlertView show];
+    }
+}
+
+
+- (void)importFromXML:(NSURL *)url {
+    
+    self.parser = [[NSXMLParser alloc]initWithContentsOfURL:url];
+    self.parser.delegate = self;
+    NSLog(@"**** START PARSER OF %@", url.path);
+    
+    [self.parser parse];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
+    
+    NSLog(@"**** END PARSER OF %@", url.path);
+}
 
 
 
+- (void)setDefaultDataAsImportedForStore:(NSPersistentStore *)aStore {
+    
+    NSMutableDictionary *dictinary = [NSMutableDictionary dictionaryWithDictionary:[[aStore metadata] copy]];
+    [dictinary setObject:@YES forKey:@"DefaultDataImported"];
+    [self.coordinator setMetadata:dictinary forPersistentStore:aStore];
+}
 
+#pragma mark ==================== ALERT DELEGATE ====================
 
-
-
-
-
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (alertView == self.importAlertView) {
+        if (buttonIndex == 1) {
+            
+            //performBlock 不会堵塞主线程，执行完毕后自动返回。
+            [_importContext performBlock:^{
+                [self importFromXML:[[NSBundle mainBundle] URLForResource:@"DefaultData" withExtension:@"xml"]];
+            }];
+        }else {
+            NSLog(@"User cancle import default data");
+        }
+        [self setDefaultDataAsImportedForStore:_store];
+    }
+}
 
 
 
