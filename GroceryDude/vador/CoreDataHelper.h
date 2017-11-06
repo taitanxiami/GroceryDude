@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "MigrationVC.h"
-
+#import "CoreDataImporter.h"
 
 @interface CoreDataHelper : NSObject<UIAlertViewDelegate,NSXMLParserDelegate>
 

@@ -47,6 +47,7 @@
 		B4BE43DA1FA61B0C00B5AF07 /* LocationAtHomeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43D91FA61B0C00B5AF07 /* LocationAtHomeTVC.m */; };
 		B4BE43DD1FA61B2000B5AF07 /* LocationAtShopTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43DC1FA61B2000B5AF07 /* LocationAtShopTVC.m */; };
 		B4BE43E01FA61B3900B5AF07 /* LocationAtShopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BE43DF1FA61B3900B5AF07 /* LocationAtShopVC.m */; };
+		B4E5CA981FAC67E1009C659B /* CoreDataImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E5CA971FAC67E1009C659B /* CoreDataImporter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,8 @@
 		B4BE43DC1FA61B2000B5AF07 /* LocationAtShopTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopTVC.m; sourceTree = "<group>"; };
 		B4BE43DE1FA61B3900B5AF07 /* LocationAtShopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationAtShopVC.h; sourceTree = "<group>"; };
 		B4BE43DF1FA61B3900B5AF07 /* LocationAtShopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAtShopVC.m; sourceTree = "<group>"; };
+		B4E5CA961FAC67E1009C659B /* CoreDataImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataImporter.h; sourceTree = "<group>"; };
+		B4E5CA971FAC67E1009C659B /* CoreDataImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataImporter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 				B45513F71FAB1C1F00E103A4 /* LocationAtHomePickerTF.m */,
 				B45513F91FAB1C3300E103A4 /* LocationAtShopPickerTF.h */,
 				B45513FA1FAB1C3400E103A4 /* LocationAtShopPickerTF.m */,
+				B4E5CA961FAC67E1009C659B /* CoreDataImporter.h */,
+				B4E5CA971FAC67E1009C659B /* CoreDataImporter.m */,
 			);
 			path = vador;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				B40E4C7F1F98A52E00EB215D /* LocationAtHome+CoreDataClass.m in Sources */,
 				B45513F51FAB0EAA00E103A4 /* UnitPickerTF.m in Sources */,
 				B45D96EA1F9477A000E12922 /* Measurement+CoreDataProperties.m in Sources */,
+				B4E5CA981FAC67E1009C659B /* CoreDataImporter.m in Sources */,
 				B4BE43E01FA61B3900B5AF07 /* LocationAtShopVC.m in Sources */,
 				B40E31341F95DD2C00A0A6F5 /* Model2Model3.xcmappingmodel in Sources */,
 				843AD92C1F9388CA00C787A1 /* CoreDataHelper.m in Sources */,
